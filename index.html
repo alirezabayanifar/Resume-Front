@@ -1,0 +1,726 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8"/>
+    <link rel="preload" as="font" href="./public/font/Anjoman-Thin.woff" type="font/woff2" crossorigin>
+    <link rel="preload" as="font" href="./public/font/Anjoman-Regular.woff" type="font/woff2" crossorigin>
+    <link rel="preload" as="font" href="./public/font/Anjoman-Light.woff" type="font/woff2" crossorigin>
+    <link rel="preload" as="font" href="./public/font/Anjoman-Medium.woff" type="font/woff2" crossorigin>
+    <link rel="preload" as="font" href="./public/font/Anjoman-SemiBold.woff" type="font/woff2" crossorigin>
+    <link rel="preload" as="font" href="./public/font/Anjoman-Bold.woff" type="font/woff2" crossorigin>
+    <link rel="preload" as="font" href="./public/font/Anjoman-ExtraBold.woff" type="font/woff2" crossorigin>
+    <link rel="icon" type="image/svg+xml" href="/svg/favicon.svg"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Home</title>
+</head>
+<body class="bg-[#F5FAFA] font-Anjoman">
+
+<!--Header-->
+<header class="mt-4 mb-12 lg:mt-12 lg:mb-11">
+    <div class="container">
+        <div class="flex items-center justify-between bg-white p-3 lg:px-4 lg:py-3 xg:px-[50px] xg:py-5 rounded-lg lg:rounded-full">
+            <div class="flex items-center gap-2.5">
+                <a href="#" class="hidden lg:block">
+                    <img src="./public/images/iran-flag.png" alt="iran-flag" class="w-full h-full object-contain" width="89" height="56">
+                </a>
+                <a href="#" class="w-[73px] h-[40px] lg:w-[103px] lg:h-[56px]">
+                    <img src="./public/svg/favicon.svg" alt="favicon" class="w-full h-full" width="103" height="56">
+                </a>
+            </div>
+            <nav class="hidden lg:flex lg:items-center lg:gap-4">
+                <img src="./public/svg/titr.svg" width="15" height="20" draggable="false" alt="titr">
+                <ul class="flex items-center gap-x-5 text-[#525252] text-lg">
+                    <li class="w-fit">
+                        <a href="#" class="main-nav-item font-medium active">الصفحة الرئيسية</a>
+                    </li>
+                    <li class="w-fit">
+                        <a href="#" class="main-nav-item font-medium hover:text-[#4BC3C4] duration-200 transition-all">خلونا السوا</a>
+                    </li>
+                    <li class="w-fit">
+                        <a href="#" class="main-nav-item font-medium hover:text-[#4BC3C4] duration-200 transition-all">فیدیوکست</a>
+                    </li>
+                    <li class="w-fit">
+                        <a href="#" class="main-nav-item font-medium hover:text-[#4BC3C4] duration-200 transition-all">من نحن</a>
+                    </li>
+                    <li class="w-fit">
+                        <a href="#" class="main-nav-item font-medium hover:text-[#4BC3C4] duration-200 transition-all">من تواصل</a>
+                    </li>
+                </ul>
+                <img src="./public/svg/titr-left.svg" width="15" height="20" draggable="false" alt="titr">
+            </nav>
+            <div class="flex items-center gap-2">
+                <div class="w-[87px] h-[48px] lg:w-[108px] lg:h-[56px] bg-[#E0E0E0] rounded-full">
+                    <div class="flex items-center justify-between w-full h-full px-0.5">
+                        <a href="#" class="w-[42px] lg:w-[50px] h-[42px] lg:h-[50px] bg-[#393939] rounded-full text-white flex items-center justify-center">AR</a>
+                        <a href="#" class="w-[42px] lg:w-[50px] h-[42px] lg:h-[50px] rounded-full flex items-center justify-center">EN</a>
+                    </div>
+                </div>
+                <a href="#" data-te-toggle="modal" data-te-target="#search" data-te-ripple-init
+                class="rounded-full w-[48px] h-[48px] lg:w-[56px] lg:h-[56px] bg-[#FC5A31] flex justify-center items-center">
+                    <i class="icon-search text-2xl text-white !leading-[0]"></i>
+                </a>
+                <div data-te-modal-init
+                     class="fixed left-0 top-0 z-[1055] hidden h-full w-full overflow-y-auto overflow-x-hidden outline-none"
+                     id="search"
+                     tabindex="-1"
+                     aria-labelledby="exampleModalLabel"
+                     aria-hidden="true">
+                    <div data-te-modal-dialog-ref class="mx-6 pointer-events-none relative w-auto translate-y-[-50px] opacity-0 transition-all duration-300 mt-24 md:mt-32 ease-in-out min-[576px]:mx-auto min-[576px]:mt-7 container">
+                        <div class="min-[576px]:shadow-[0_0.5rem_1rem_rgba(#000, 0.15)] pointer-events-auto relative flex w-full flex-col border-none bg-transparent outline-none">
+                            <form class="relative" action="">
+                                <div class="relative flex flex-col lg:flex-row items-center gap-4 bg-white rounded-md lg:rounded-lg py-4 px-4">
+                                    <div class="w-full md:w-4/12">
+                                        <label for="searchBar"></label>
+                                        <input type="text" id="searchBar" name="searchBar" placeholder="اكتب الكلمة التي تريدها" class="w-full border-bgLight rounded-[10px] px-2 md:px-6 py-2.5 border bg-transparent outline-none text-blackLight text-sm placeholder-blackLight flex-grow">
+                                    </div>
+                                    <div class="w-full md:w-3/12">
+                                        <label for="subject"></label>
+                                        <select id="subject"
+                                                name="subject"
+                                                data-te-select-init
+                                                data-te-class-notch="!hidden"
+                                                data-te-class-select-option-text="text-sm"
+                                                data-te-class-select-arrow="left-3 absolute cursor-pointer w-5 h-5 top-3"
+                                                data-te-class-select-input="cursor-pointer !p-2.5 border border-gray-300 bg-transparent text-gray-900 text-sm rounded-lg border-bgLight block w-full">
+                                            <option selected>موضوع البحث</option>
+                                            <option value="2">موضوع1</option>
+                                            <option value="3">موضوع2</option>
+                                            <option value="4">موضوع3</option>
+                                            <option value="5">موضوع4</option>
+                                        </select>
+                                    </div>
+                                    <div class="w-full md:w-3/12">
+                                        <label for="content-type"></label>
+                                        <select id="content-type"
+                                                name="content-type"
+                                                data-te-select-init
+                                                data-te-class-notch="!hidden"
+                                                data-te-class-select-option-text="text-sm"
+                                                data-te-class-select-arrow="left-3 absolute cursor-pointer w-5 h-5 top-3"
+                                                data-te-class-select-input="cursor-pointer !p-2.5 border border-gray-300 bg-transparent text-gray-900 text-sm rounded-lg border-bgLight block w-full">
+                                            <option selected>نوع المحتوی</option>
+                                            <option value="2">المحتوی1</option>
+                                            <option value="3">المحتوی2</option>
+                                        </select>
+                                    </div>
+                                    <button type="submit" class="flex-grow-0 w-full md:w-auto md:flex-grow rounded-[10px] bg-[#FC5A31] text-white text-sm p-3">
+                                        يبحث
+                                        <i class="icon-search text-white text-sm"></i>
+                                    </button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+<!--Hero-->
+<section class="mb-16 lg:mb-36">
+    <div class="container">
+        <div class="flex flex-col gap-4">
+            <div class="flex flex-col lg:flex-row items-stretch gap-4">
+                <div class="w-auto">
+                    <div class="flex flex-col justify-between gap-3 lg:gap-2.5 w-fit h-full">
+                        <h2 class="font-extrabold text-[#1C1C1C] text-[40px] xg:text-[50px] w-fit">ایـــــران الــــیوم</h2>
+                        <p class="text-[#085E5E] font-medium text-lg lg:text-2xl w-full xg:w-4/5">
+                            قصــص مذهـــــلة عن الســــــفر  إلـــــى أرض الثــقافة والتــــاريخ القـــديمة
+                        </p>
+                        <div class="w-full lg:w-fit bg-white border border-[#E9E9E9] rounded-2xl p-4 ">
+                            <div class="flex flex-col justify-evenly divide-y divide-[#A6A6A6]">
+                                <div class="pb-4">
+                                    <ul class="flex justify-center">
+                                        <li>
+                                            <a href="#" class="flex justify-center items-center w-[60px] h-[60px] z-30 -ml-2 border-2 border-white transition-all duration-300 bg-[#FFE6F0] group hover:bg-[#F6377B] rounded-full">
+                                                <i class="icon-instagram text-[#F6377B] transition-all duration-300 group-hover:text-[#FFE6F0] text-3xl !leading-[0]"></i>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#" class="flex justify-center items-center w-[60px] h-[60px] z-20 -ml-2 border-2 border-white transition-all duration-300 bg-[#C4E8FD] group hover:bg-[#2580EB] rounded-full">
+                                                <i class="icon-telegram text-[#2580EB] transition-all duration-300 group-hover:text-[#C4E8FD] text-3xl !leading-[0]"></i>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#" class="flex justify-center items-center w-[60px] h-[60px] z-10 -ml-2 border-2 border-white transition-all duration-300 bg-[#FFBABA] group hover:bg-[#E63632] rounded-full">
+                                                <i class="icon-youtube text-[#E63632] transition-all duration-300 ml-2 group-hover:text-[#FFBABA] text-xl !leading-[0]"></i>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#" class="flex justify-center items-center w-[60px] h-[60px] border-2 border-white transition-all duration-300 bg-[#B6CEFF] group hover:bg-[#1F64D9] rounded-full">
+                                                <i class="icon-facebook text-[#1F64D9] transition-all duration-300 group-hover:text-[#B6CEFF] text-3xl !leading-[0]"></i>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="pt-4">
+                                    <div class="flex items-center justify-center gap-8">
+                                        <div class="font-extrabold text-4xl [direction:ltr] w-1/2">+10k</div>
+                                        <div class="font-normal text-lg w-1/2">فی الشبکات الاجتماعیة</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="w-full">
+                    <div class="relative h-full">
+                        <picture>
+                            <source media="(min-width:1440px)" srcset="./public/images/hero-image.webp">
+                            <source media="(min-width:1024px)" srcset="./public/images/hero-image-tab.webp">
+                            <img src="./public/images/hero-image-mobile.webp" alt="header-img" draggable="false" class="w-full lg:w-[496px] lg:h-full xg:w-[704px] xg:h-[406px]" width="354" height="398">
+                        </picture>
+                        <a href="#"
+                           class="absolute top-1 lg:top-auto lg:bottom-2.5 right-0 font-semibold text-white text-sm xg:text-lg group
+                            bg-[#1C1C1C] transition-colors duration-300 hover:bg-[#4BC3C4] rounded-full p-1 pl-5 lg:pl-2 xl:pl-6 inline-flex items-center gap-3">
+                            <i class="icon-user text-lg bg-[#4BC3C4] transition-colors duration-300 group-hover:bg-[#FC5A31] rounded-full w-[43px] h-[43px] xg:w-[52px] xg:h-[52px] flex items-center justify-center"></i>
+                            <span>مـــن نحـــــــن</span>
+                        </a>
+                    </div>
+                </div>
+                <div class="w-full lg:w-[200px]">
+                    <div class="h-full flex flex-col justify-between relative">
+                        <div class="w-full lg:w-[200px] h-[200px] lg:h-[250px] xg:h-[300px] bg-[#DEB86F] rounded-2xl bg-[url('./public/svg/wave-mobile.svg')] bg-no-repeat lg:bg-[url('./public/svg/wave.svg')] bg-cover">
+                            <div class="flex flex-row justify-around lg:flex-col lg:justify-between lg:items-center h-full">
+                                <div class="pt-10 lg:pt-4">
+                                    <h3 class="text-right md:text-center text-lg font-extrabold text-[#333333] md:text-xl">خلـــونا السوا</h3>
+                                    <p class="text-sm text-[#333333] font-normal md:text-base text-right md:text-center">
+                                        مع حسن کفا
+                                    </p>
+                                </div>
+                                <div class="w-[114px] h-[170px] xg:w-[128px] xg:h-[192px] self-end lg:self-center">
+                                    <img src="./public/images/woman.png" loading="lazy" alt="woman" class="object-contain xg:w-[128px] xg:h-[192px]" width="114" height="170">
+                                </div>
+                            </div>
+                        </div>
+                        <p class="absolute bottom-10 lg:translate-y-0 right-0 left-0 w-1/2 lg:w-auto pr-8 lg:pr-0 pt-4 lg:pt-0 lg:static lg:inline-block text-[#393939] text-justify text-xs lg:text-sm xg:text-lg">
+                            لوريــم إيبســـــوم هو ببســاطة نــــص شـــكلي بمعـــــنى أن الغاية هي الشـــكل
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="flex flex-row-reverse lg:flex-row items-center justify-between gap-4">
+                <div class="w-1/2 lg:w-5/12">
+                    <div class="relative h-[333px] lg:h-[224px] flex items-center justify-between
+                     xg:h-[224px] bg-[#FD6B3D] rounded-xl lg:rounded-2xl overflow-hidden
+                     before:hidden lg:before:block before:w-[270px] before:h-[270px] before:bg-[#FC5A31]
+                     before:rounded-full before:absolute before:-left-28 xg:before:-left-16 before:top-1/2 before:-translate-y-1/2
+                        before:hover:w-[900px] before:duration-500 before:transition-all">
+                        <div class="flex flex-col lg:flex-row items-center justify-between w-full h-full px-2 py-6 lg:p-4 gap-4">
+                            <div class="flex flex-col gap-2 justify-around lg:justify-between items-center lg:items-start h-full">
+                                <img src="./public/images/video.png" loading="lazy" alt="video-icon" width="53" height="53" class="z-50">
+                                <h3 class="text-white font-semibold text-2xl lg:text-4xl w-full text-center lg:text-start z-50">رحلـــــة</h3>
+                                <p class="w-full text-center lg:w-4/5 text-white font-light text-sm lg:text-lg lg:text-start z-50">لوريم إيبسوم هو ببساطة نص شكلي بمعنى أن الغاية هي الشكل.</p>
+                            </div>
+                            <div class="z-30">
+                                <i class="icon-player text-white text-7xl md:text-8xl"></i>
+                            </div>
+                        </div>
+                        <a href="#" class="absolute top-0 bottom-0 right-0 left-0 z-50"></a>
+                    </div>
+                </div>
+                <div class="w-1/2 lg:w-7/12">
+                    <div class="relative h-[333px] lg:h-[224px] flex items-center justify-between
+                     xg:h-[224px] bg-[#4BC2C5] rounded-xl lg:rounded-2xl overflow-hidden
+                     bg-[url('./public/images/bg-hero-podcast.png')] bg-no-repeat lg:[background-position:50%_530%_!important] [background-position:51%_170%_!important]">
+                        <div class="flex flex-col lg:flex-row items-center justify-between w-full h-full px-2 py-2.5 lg:p-7 gap-3 lg:gap-7">
+                            <img src="./public/images/headphone.webp" loading="lazy" alt="podcast-icon" class="lg:w-[90px] xg:w-[128px] h-auto object-cover" width="68" height="74">
+                            <div class="flex flex-col gap-4 justify-center items-start">
+                                <h3 class="text-white font-semibold text-2xl lg:text-4xl w-full text-center lg:text-start">فيديوكاست</h3>
+                                <p class="w-fit text-center text-white font-light text-sm lg:text-lg lg:text-start">لوريم إيبسوم هو ببساطة نص شكلي بمعنى أن الغاية هي الشكل.</p>
+                            </div>
+                            <div class="shrink-0 lg:w-[180px] xg:w-[240px] z-30 relative">
+                                <img src="./public/images/window-podcast.webp" draggable="false" loading="lazy" alt="window-podcast" class="lg:w-[240px] lg:h-auto" width="120" height="80">
+                                <a href="#" class="absolute top-1/2 -translate-y-1/2 right-7 lg:right-12 flex items-center justify-center
+                                               w-[28px] h-[28px] lg:w-[56px] lg:h-[56px] rounded-full bg-white/50 backdrop-blur-sm
+                                               border-2 border-white">
+                                    <i class="icon-arrow-left-flash text-white text-[0.5rem] lg:text-sm ml-1 !leading-[0]"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!--BG-Window-GROUP-->
+<div class="relative mb-12">
+    <!--Background-->
+    <div class="absolute top-1/4 lg:top-[36rem] left-0 right-0 w-full h-[1125px] lg:h-[1106px] pointer-events-none
+    bg-[url('./public/images/bg-window-mobile.webp')] lg:bg-[url('./public/images/bg-window.webp')] bg-no-repeat bg-cover bg-center z-[-10]"></div>
+    <!--Blog Slider-->
+    <section class="mb-16 lg:mb-24">
+        <div class="container">
+            <div class="text-center mb-9 lg:mb-10">
+                <h2 class="text-[#FC5A31] font-semibold text-sm lg:text-lg">مدونـــتــــنا</h2>
+                <h3 class="text-2xl lg:text-3xl xg:text-4xl text-[#393939] font-semibold mt-5 flex items-center justify-center gap-1 lg:gap-4">
+                    <picture>
+                        <source media="(min-width:1024px)" srcset="./public/svg/title-icon-right.svg">
+                        <img src="./public/svg/title-icon-right-mobile.svg" loading="lazy" alt="" draggable="false" class="w-auto h-auto" width="121" height="25">
+                    </picture>
+                    <span class="text-center">اكتشا ف الجمال الطبيعي والثقافي في إيران</span>
+                    <picture>
+                        <source media="(min-width:1024px)" srcset="./public/svg/title-icon-left.svg">
+                        <img src="./public/svg/title-icon-left-mobile.svg" loading="lazy" alt="" draggable="false" class="w-auto h-auto" width="121" height="25">
+                    </picture>
+                </h3>
+            </div>
+        </div>
+        <!--Slider Blog-->
+        <div dir="rtl" class="swiper blog-slider">
+            <div class="swiper-wrapper">
+                <!--Slides-->
+                <div class="swiper-slide relative rounded-xl lg:rounded-[33px] !w-[280px] !h-[263px] lg:!w-[687px] lg:!h-[426px] xg:!w-[860px] xg:!h-[492px]">
+                    <img src="./public/images/tehran1.png" loading="lazy" alt="tehran" class="w-full h-full object-cover rounded-xl lg:rounded-[33px]">
+                    <div class="absolute left-3 bottom-3 lg:left-6 lg:bottom-6 w-[189px] h-[163px] lg:w-[333px] lg:h-[223px] xg:w-[392px] xg:h-[220px] bg-white rounded-xl lg:rounded-3xl p-2 lg:p-4">
+                        <div class="flex flex-col justify-center gap-2 lg:gap-4 h-full">
+                            <span class="text-[#969798] text-xs lg:text-base font-light ">۲۴ تیر ۹۹</span>
+                            <h4>
+                                <a href="#" class="font-normal text-lg lg:text-2xl">
+                                    الطرق الجميلة لاكتشاف طهران
+                                </a>
+                            </h4>
+                            <p class="text-[#525252] text-justify text-sm lg:text-lg font-light lg:font-normal">
+                                تُعد طهران، عاصمة إيران، مدينة ذات جمال فريد ومعالم سياحية رائعة تستحق الاستكشاف.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide relative rounded-xl lg:rounded-[33px] !w-[280px] !h-[263px] lg:!w-[687px] lg:!h-[426px] xg:!w-[860px] xg:!h-[492px]">
+                    <img src="./public/images/tehran1.png" loading="lazy" alt="tehran" class="w-full h-full object-cover rounded-xl lg:rounded-[33px]">
+                    <div class="absolute left-3 bottom-3 lg:left-6 lg:bottom-6 w-[189px] h-[163px] lg:w-[333px] lg:h-[223px] xg:w-[392px] xg:h-[220px] bg-white rounded-xl lg:rounded-3xl p-2 lg:p-4">
+                        <div class="flex flex-col justify-center gap-2 lg:gap-4 h-full">
+                            <span class="text-[#969798] text-xs lg:text-base font-light ">۲۴ تیر ۹۹</span>
+                            <h4>
+                                <a href="#" class="font-normal text-lg lg:text-2xl">
+                                    الطرق الجميلة لاكتشاف طهران
+                                </a>
+                            </h4>
+                            <p class="text-[#525252] text-justify text-sm lg:text-lg font-light lg:font-normal">
+                                تُعد طهران، عاصمة إيران، مدينة ذات جمال فريد ومعالم سياحية رائعة تستحق الاستكشاف.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide relative rounded-xl lg:rounded-[33px] !w-[280px] !h-[263px] lg:!w-[687px] lg:!h-[426px] xg:!w-[860px] xg:!h-[492px]">
+                    <img src="./public/images/tehran1.png" loading="lazy" alt="tehran" class="w-full h-full object-cover rounded-xl lg:rounded-[33px]">
+                    <div class="absolute left-3 bottom-3 lg:left-6 lg:bottom-6 w-[189px] h-[163px] lg:w-[333px] lg:h-[223px] xg:w-[392px] xg:h-[220px] bg-white rounded-xl lg:rounded-3xl p-2 lg:p-4">
+                        <div class="flex flex-col justify-center gap-2 lg:gap-4 h-full">
+                            <span class="text-[#969798] text-xs lg:text-base font-light ">۲۴ تیر ۹۹</span>
+                            <h4>
+                                <a href="#" class="font-normal text-lg lg:text-2xl">
+                                    الطرق الجميلة لاكتشاف طهران
+                                </a>
+                            </h4>
+                            <p class="text-[#525252] text-justify text-sm lg:text-lg font-light lg:font-normal">
+                                تُعد طهران، عاصمة إيران، مدينة ذات جمال فريد ومعالم سياحية رائعة تستحق الاستكشاف.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide relative rounded-xl lg:rounded-[33px] !w-[280px] !h-[263px] lg:!w-[687px] lg:!h-[426px] xg:!w-[860px] xg:!h-[492px]">
+                    <img src="./public/images/tehran1.png" loading="lazy" alt="tehran" class="w-full h-full object-cover rounded-xl lg:rounded-[33px]">
+                    <div class="absolute left-3 bottom-3 lg:left-6 lg:bottom-6 w-[189px] h-[163px] lg:w-[333px] lg:h-[223px] xg:w-[392px] xg:h-[220px] bg-white rounded-xl lg:rounded-3xl p-2 lg:p-4">
+                        <div class="flex flex-col justify-center gap-2 lg:gap-4 h-full">
+                            <span class="text-[#969798] text-xs lg:text-base font-light ">۲۴ تیر ۹۹</span>
+                            <h4>
+                                <a href="#" class="font-normal text-lg lg:text-2xl">
+                                    الطرق الجميلة لاكتشاف طهران
+                                </a>
+                            </h4>
+                            <p class="text-[#525252] text-justify text-sm lg:text-lg font-light lg:font-normal">
+                                تُعد طهران، عاصمة إيران، مدينة ذات جمال فريد ومعالم سياحية رائعة تستحق الاستكشاف.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide relative rounded-xl lg:rounded-[33px] !w-[280px] !h-[263px] lg:!w-[687px] lg:!h-[426px] xg:!w-[860px] xg:!h-[492px]">
+                    <img src="./public/images/tehran1.png" loading="lazy" alt="tehran" class="w-full h-full object-cover rounded-xl lg:rounded-[33px]">
+                    <div class="absolute left-3 bottom-3 lg:left-6 lg:bottom-6 w-[189px] h-[163px] lg:w-[333px] lg:h-[223px] xg:w-[392px] xg:h-[220px] bg-white rounded-xl lg:rounded-3xl p-2 lg:p-4">
+                        <div class="flex flex-col justify-center gap-2 lg:gap-4 h-full">
+                            <span class="text-[#969798] text-xs lg:text-base font-light ">۲۴ تیر ۹۹</span>
+                            <h4>
+                                <a href="#" class="font-normal text-lg lg:text-2xl">
+                                    الطرق الجميلة لاكتشاف طهران
+                                </a>
+                            </h4>
+                            <p class="text-[#525252] text-justify text-sm lg:text-lg font-light lg:font-normal">
+                                تُعد طهران، عاصمة إيران، مدينة ذات جمال فريد ومعالم سياحية رائعة تستحق الاستكشاف.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="flex items-center justify-center mx-4 md:mx-8 mt-5 pb-4">
+                <div class="flex items-center gap-2">
+                    <!-- If we need navigation buttons -->
+                    <a href="#" class="swiper-button-next !w-12 !h-12 md:!w-14 md:!h-14 btn-slider group !static !mt-0">
+                        <i class="icon-right-arrow-slider text-[#505050] duration-300 transition-all group-hover:text-white text-[12px] lg:text-[14px] !leading-[0]"></i>
+                    </a>
+                    <a href="#" class="swiper-button-prev !w-12 !h-12 md:!w-14 md:!h-14 btn-slider group !static !mt-0">
+                        <i class="icon-left-arrow-slider text-[#505050] duration-300 transition-all group-hover:text-white text-[12px] lg:text-[14px] !leading-[0]"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--About-->
+    <section>
+        <div class="container">
+            <div class="text-center mb-24">
+                <h2 class="text-2xl lg:text-4xl text-[#393939] font-semibold flex items-center justify-center gap-1 lg:gap-4">
+                    <picture>
+                        <source media="(min-width:1024px)" srcset="./public/svg/title-icon-right.svg">
+                        <img src="./public/svg/title-icon-right-mobile.svg" loading="lazy" alt="" draggable="false" class="w-auto h-auto" width="121" height="25">
+                    </picture>
+                    <span class="text-center">من نحــــن</span>
+                    <picture>
+                        <source media="(min-width:1024px)" srcset="./public/svg/title-icon-left.svg">
+                        <img src="./public/svg/title-icon-left-mobile.svg" loading="lazy" alt="" draggable="false" class="w-auto h-auto" width="121" height="25">
+                    </picture>
+                </h2>
+                <p class="w-4/5 lg:2/3 mx-auto text-[#043939] text-center font-light text-sm lg:text-lg leading-[180%] mt-3">
+                    "إيران إليوم" بمثابة دليل كامل للمسافرين والمهتمين بالثقافة والتاريخ الإيراني. ومن بين الخدمات والمعلومات المقدمة في هذا الموقع، يمكننا أن نذكر التعريف بمعالم الجذب السياحي المختلفة في إيران، ودليل السفر، والعادات المحلية، والتعريف بالأبطال التاريخيين والثقافيين الصامدين، والتعريف بالأطعمة المحلية، والأخبار والأحداث الثقافية والسياحية المهمة.
+                </p>
+            </div>
+            <div class="grid grid-cols-2 lg:grid-cols-3 xl:grid-cols-6 place-items-center gap-y-20 gap-x-4">
+                <div class="flex flex-col gap-2">
+                    <div class="relative w-[160px] h-[67px] lg:w-[200px] lg:h-[80px] bg-[#EE6543] rounded-full bg-[url('./public/images/bg-hashur.png')]">
+                        <img src="./public/images/about-woman.png" loading="lazy" alt="about-woman" class="absolute w-[87px] h-[134px] lg:w-[102px] lg:h-[157px] bottom-0 right-1/2 translate-x-1/2">
+                    </div>
+                    <h5 class="text-[#393939] font-semibold text-lg lg:text-2xl">
+                        <a href="#">
+                            حســن حرمــلة
+                        </a>
+                    </h5>
+                    <span class="text-[#525252] font-light text-sm lg:text-lg">محرر القسم فن</span>
+                </div>
+                <div class="flex flex-col gap-2">
+                    <div class="relative w-[160px] h-[67px] lg:w-[200px] lg:h-[80px] bg-[#A27F26] rounded-full bg-[url('./public/images/bg-hashur.png')]">
+                        <img src="./public/images/about-woman.png" loading="lazy" alt="about-woman" class="absolute w-[87px] h-[134px] lg:w-[102px] lg:h-[157px] bottom-0 right-1/2 translate-x-1/2">
+                    </div>
+                    <h5 class="text-[#393939] font-semibold text-lg lg:text-2xl">
+                        <a href="#">
+                            حســن حرمــلة
+                        </a>
+                    </h5>
+                    <span class="text-[#525252] font-light text-sm lg:text-lg">محرر القسم فن</span>
+                </div>
+                <div class="flex flex-col gap-2">
+                    <div class="relative w-[160px] h-[67px] lg:w-[200px] lg:h-[80px] bg-[#BAD746] rounded-full bg-[url('./public/images/bg-hashur.png')]">
+                        <img src="./public/images/about-woman.png" loading="lazy" alt="about-woman" class="absolute w-[87px] h-[134px] lg:w-[102px] lg:h-[157px] bottom-0 right-1/2 translate-x-1/2">
+                    </div>
+                    <h5 class="text-[#393939] font-semibold text-lg lg:text-2xl">
+                        <a href="#">
+                            حســن حرمــلة
+                        </a>
+                    </h5>
+                    <span class="text-[#525252] font-light text-sm lg:text-lg">محرر القسم فن</span>
+                </div>
+                <div class="flex flex-col gap-2">
+                    <div class="relative w-[160px] h-[67px] lg:w-[200px] lg:h-[80px] bg-[#ED8E8E] rounded-full bg-[url('./public/images/bg-hashur.png')]">
+                        <img src="./public/images/about-woman.png" loading="lazy" alt="about-woman" class="absolute w-[87px] h-[134px] lg:w-[102px] lg:h-[157px] bottom-0 right-1/2 translate-x-1/2">
+                    </div>
+                    <h5 class="text-[#393939] font-semibold text-lg lg:text-2xl">
+                        <a href="#">
+                            حســن حرمــلة
+                        </a>
+                    </h5>
+                    <span class="text-[#525252] font-light text-sm lg:text-lg">محرر القسم فن</span>
+                </div>
+                <div class="flex flex-col gap-2">
+                    <div class="relative w-[160px] h-[67px] lg:w-[200px] lg:h-[80px] bg-[#447CCA] rounded-full bg-[url('./public/images/bg-hashur.png')]">
+                        <img src="./public/images/about-woman.png" loading="lazy" alt="about-woman" class="absolute w-[87px] h-[134px] lg:w-[102px] lg:h-[157px] bottom-0 right-1/2 translate-x-1/2">
+                    </div>
+                    <h5 class="text-[#393939] font-semibold text-lg lg:text-2xl">
+                        <a href="#">
+                            حســن حرمــلة
+                        </a>
+                    </h5>
+                    <span class="text-[#525252] font-light text-sm lg:text-lg">محرر القسم فن</span>
+                </div>
+                <div class="flex flex-col gap-2">
+                    <div class="relative w-[160px] h-[67px] lg:w-[200px] lg:h-[80px] bg-[#40B7B8] rounded-full bg-[url('./public/images/bg-hashur.png')]">
+                        <img src="./public/images/about-woman.png" loading="lazy" alt="about-woman" class="absolute w-[87px] h-[134px] lg:w-[102px] lg:h-[157px] bottom-0 right-1/2 translate-x-1/2">
+                    </div>
+                    <h5 class="text-[#393939] font-semibold text-lg lg:text-2xl">
+                        <a href="#">
+                            حســن حرمــلة
+                        </a>
+                    </h5>
+                    <span class="text-[#525252] font-light text-sm lg:text-lg">محرر القسم فن</span>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--Rehle-->
+    <section class="mt-24 lg:mt-36">
+        <div class="container">
+            <div class="flex flex-col gap-2 mb-9">
+                <div class="flex items-center gap-4">
+                    <img src="./public/svg/titr.svg" loading="lazy" alt="" draggable="false" width="27" height="35">
+                    <h2 class="text-2xl lg:text-3xl xg:text-4xl text-[#393939] font-semibold">
+                        رحـــلة إلى أرض الدهشــة إيران
+                    </h2>
+                </div>
+                <div class="flex justify-between items-center">
+                    <p class="text-[#FC5A31] font-light text-sm lg:text-lg">استكشاف المعالم التاريخية والطبيعية</p>
+                    <a href="#" class="hidden lg:block text-white font-light text-sm lg:text-lg bg-[#393939] hover:bg-[#FC5A31] hover:transition-colors hover:duration-300
+                     transition-colors duration-300 px-5 py-2 rounded-full">
+                        <span>رحـــلة إلى إيران</span>
+                        <i class="icon-arrow-left-flash text-[8px] lg:text-[10px] mr-4"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="cards">
+                <!--Slides-->
+                <div class="card active">
+                    <img src="./public/images/nature-4.png" alt="">
+                </div>
+
+                <div class="card">
+                    <img src="./public/images/nature-5.png" alt="">
+                </div>
+
+                <div class="card">
+                    <img src="./public/images/nature-6.png" alt="">
+                </div>
+
+            </div>
+        </div>
+    </section>
+</div>
+<!--BG-Wave-->
+<div class="bg-[url('../public/svg/bg-wavy-mobile.svg')] lg:bg-[url('../public/svg/bg-wavy.svg')] bg-repeat bg-cover w-full h-full pt-24 pb-14">
+    <div class="container">
+        <!--Last News-->
+        <section>
+            <div class="text-center mb-6 lg:mb-8">
+                <h2 class="text-2xl lg:text-4xl text-[#393939] font-semibold mt-5 flex items-center justify-center gap-1 lg:gap-4">
+                    <picture>
+                        <source media="(min-width:1024px)" srcset="./public/svg/title-icon-right.svg">
+                        <img src="./public/svg/title-icon-right-mobile.svg" loading="lazy" alt="" draggable="false" class="w-auto h-auto" width="121" height="25">
+                    </picture>
+                    <span class="text-center">أخــــرین أخبار</span>
+                    <picture>
+                        <source media="(min-width:1024px)" srcset="./public/svg/title-icon-left.svg">
+                        <img src="./public/svg/title-icon-left-mobile.svg" loading="lazy" alt="" draggable="false" class="w-auto h-auto" width="121" height="25">
+                    </picture>
+                </h2>
+                <p class="w-full lg:w-2/3 lg:mx-auto text-[#043939] text-center font-light text-sm lg:text-lg leading-[180%] mt-6">
+                    استكشاف المعالم التاريخية والطبيعية
+                </p>
+            </div>
+            <div class="grid grid-cols-1 lg:grid-cols-2 xg:grid-cols-3 gap-3 place-items-center place-content-evenly">
+                <figure class="w-full xg:w-[350px] xl:w-[419px] h-full flex flex-col gap-4 bg-white rounded-lg lg:rounded-2xl p-3">
+                    <div class="flex flex-col gap-2">
+                        <img src="./public/images/last-news-1.png" loading="lazy" alt="last-news" class="w-full h-[180px] lg:h-[214px] object-cover rounded-xl" width="331" height="181">
+                        <div class="flex justify-between items-center">
+                            <div class="flex items-center gap-1">
+                                <i class="icon-user-stroke text-[#274C74] text-xs lg:text-sm"></i>
+                                <span class="text-[#274C74] text-xs lg:text-sm">نوشته شده توسط ادمین</span>
+                            </div>
+                            <div class="flex items-center gap-1">
+                                <i class="icon-calender text-[#274C74] text-xs lg:text-sm"></i>
+                                <span class="text-[#274C74] text-xs lg:text-sm">۲۳ فروردین۱۴۰۳</span>
+                            </div>
+                        </div>
+                    </div>
+                    <figcaption>
+                        <div class="flex flex-col gap-3">
+                            <h2>
+                                <a href="#" class="font-semibold text-[#393939] text-lg lg:text-2xl">
+                                    استكشاف تاريخ طهران
+                                </a>
+                            </h2>
+                            <p class="text-[#393939] font-light text-sm lg:text-lg !leading-[160%]">
+                                قم بزيارة المعالم التاريخية مثل القصر الملكي السعيد آباد والبازار الكبير لاكتشاف الثقافة والتاريخ الغني للمدينة.
+                            </p>
+                        </div>
+                    </figcaption>
+                </figure>
+                <figure class="w-full xg:w-[350px] xl:w-[419px] h-full flex flex-col gap-4 bg-white rounded-lg lg:rounded-2xl p-3">
+                    <div class="flex flex-col gap-2">
+                        <img src="./public/images/last-news-1.png" loading="lazy" alt="last-news" class="w-full h-[180px] lg:h-[214px] object-cover rounded-xl" width="331" height="181">
+                        <div class="flex justify-between items-center">
+                            <div class="flex items-center gap-1">
+                                <i class="icon-user-stroke text-[#274C74] text-xs lg:text-sm"></i>
+                                <span class="text-[#274C74] text-xs lg:text-sm">نوشته شده توسط ادمین</span>
+                            </div>
+                            <div class="flex items-center gap-1">
+                                <i class="icon-calender text-[#274C74] text-xs lg:text-sm"></i>
+                                <span class="text-[#274C74] text-xs lg:text-sm">۲۳ فروردین۱۴۰۳</span>
+                            </div>
+                        </div>
+                    </div>
+                    <figcaption>
+                        <div class="flex flex-col gap-3">
+                            <h2>
+                                <a href="#" class="font-semibold text-[#393939] text-lg lg:text-2xl">
+                                    استكشاف تاريخ طهران
+                                </a>
+                            </h2>
+                            <p class="text-[#393939] font-light text-sm lg:text-lg !leading-[160%]">
+                                قم بزيارة المعالم التاريخية مثل القصر الملكي السعيد آباد والبازار الكبير لاكتشاف الثقافة والتاريخ الغني للمدينة.
+                            </p>
+                        </div>
+                    </figcaption>
+                </figure>
+                <figure class="w-full xg:w-[350px] xl:w-[419px] h-full flex flex-col gap-4 bg-white rounded-lg lg:rounded-2xl p-3">
+                    <div class="flex flex-col gap-2">
+                        <img src="./public/images/last-news-1.png" loading="lazy" alt="last-news" class="w-full h-[180px] lg:h-[214px] object-cover rounded-xl" width="331" height="181">
+                        <div class="flex justify-between items-center">
+                            <div class="flex items-center gap-1">
+                                <i class="icon-user-stroke text-[#274C74] text-xs lg:text-sm"></i>
+                                <span class="text-[#274C74] text-xs lg:text-sm">نوشته شده توسط ادمین</span>
+                            </div>
+                            <div class="flex items-center gap-1">
+                                <i class="icon-calender text-[#274C74] text-xs lg:text-sm"></i>
+                                <span class="text-[#274C74] text-xs lg:text-sm">۲۳ فروردین۱۴۰۳</span>
+                            </div>
+                        </div>
+                    </div>
+                    <figcaption>
+                        <div class="flex flex-col gap-3">
+                            <h2>
+                                <a href="#" class="font-semibold text-[#393939] text-lg lg:text-2xl">
+                                    استكشاف تاريخ طهران
+                                </a>
+                            </h2>
+                            <p class="text-[#393939] font-light text-sm lg:text-lg !leading-[160%]">
+                                قم بزيارة المعالم التاريخية مثل القصر الملكي السعيد آباد والبازار الكبير لاكتشاف الثقافة والتاريخ الغني للمدينة.
+                            </p>
+                        </div>
+                    </figcaption>
+                </figure>
+            </div>
+            <div class="flex justify-center mt-6">
+                <a href="#" class="hidden lg:inline-block text-white font-light text-sm lg:text-lg bg-[#393939] hover:bg-[#FC5A31] hover:transition-colors hover:duration-300 transition-colors duration-300 px-5 py-2 rounded-full">
+                    <span>شـــاهد المزید</span>
+                    <i class="icon-arrow-left-flash text-[8px] lg:text-[10px] mr-4"></i>
+                </a>
+            </div>
+        </section>
+        <!--Footer-->
+        <footer class="flex flex-col gap-5 xg:gap-10 lg:flex-row lg:items-stretch lg:justify-between mt-20 lg:mt-36">
+            <div class="w-full h-[95px] bg-[url('./public/images/bg-footer-shape.webp')] lg:w-[90px] lg:h-[420px] bg-cover bg-repeat rounded-xl flex flex-row lg:flex-col items-center justify-around p-4">
+                <h4 class="lg:rotate-[270deg] text-white text-lg font-normal w-full">شبكاتنا الاجتماعية:</h4>
+                <ul class="flex flex-row lg:flex-col gap-2 justify-center">
+                    <li>
+                        <a href="#" class="flex justify-center items-center w-[50px] h-[50px] transition-all duration-300 bg-[#FFE6F0] group hover:bg-[#F6377B] rounded-full border-2 border-white">
+                            <i class="icon-instagram text-[#F6377B] transition-all duration-300 group-hover:text-[#FFE6F0] text-2xl mr-0.5 !leading-[0]"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="flex justify-center items-center w-[50px] h-[50px] transition-all duration-300 bg-[#C4E8FD] group hover:bg-[#2580EB] rounded-full border-2 border-white">
+                            <i class="icon-telegram text-[#2580EB] transition-all duration-300 group-hover:text-[#C4E8FD] text-2xl !leading-[0]"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="flex justify-center items-center w-[50px] h-[50px] transition-all duration-300 bg-[#FFBABA] group hover:bg-[#E63632] rounded-full border-2 border-white">
+                            <i class="icon-youtube text-[#E63632] transition-all duration-300 group-hover:text-[#FFBABA] ml-2 text-lg !leading-[0]"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="flex justify-center items-center w-[50px] h-[50px] transition-all duration-300 bg-[#B6CEFF] group hover:bg-[#1F64D9] rounded-full border-2 border-white">
+                            <i class="icon-facebook text-[#1F64D9] transition-all duration-300 group-hover:text-[#B6CEFF] text-2xl !leading-[0]"></i>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div class="flex flex-col flex-grow lg:w-min justify-between gap-4">
+                <div class="flex gap-14">
+                    <div class="flex flex-col gap-4">
+                        <h5 class="text-[#183A75] text-base lg:text-lg relative pb-2">
+                            الوصول السريع
+                            <span class="border-b-2 border-[#72839B] rounded-full w-[35px] absolute bottom-0 right-0"></span>
+                        </h5>
+                        <ul>
+                            <li class="mt-4">
+                                <a href="#" class="flex items-center gap-3 text-[#183A75] hover:text-[#FC5A31] transition-colors duration-200 hover:transition-colors hover:duration-200 text-sm lg:text-base">
+                                    <img src="./public/svg/icon-footer.svg" alt="arrow-footer" width="9" height="14">
+                                    الصفحة الرئيسية
+                                </a>
+                            </li>
+                            <li class="mt-4">
+                                <a href="#" class="flex items-center gap-3 text-[#183A75] hover:text-[#FC5A31] transition-colors duration-200 hover:transition-colors hover:duration-200 text-sm lg:text-base">
+                                    <img src="./public/svg/icon-footer.svg" alt="arrow-footer" width="9" height="14">
+                                    خلونا السوا
+                                </a>
+                            </li>
+                            <li class="mt-4">
+                                <a href="#" class="flex items-center gap-3 text-[#183A75] hover:text-[#FC5A31] transition-colors duration-200 hover:transition-colors hover:duration-200 text-sm lg:text-base">
+                                    <img src="./public/svg/icon-footer.svg" alt="arrow-footer" width="9" height="14">
+                                    تماس با ما
+                                </a>
+                            </li>
+                            <li class="mt-4">
+                                <a href="#" class="flex items-center gap-3 text-[#183A75] hover:text-[#FC5A31] transition-colors duration-200 hover:transition-colors hover:duration-200 text-sm lg:text-base">
+                                    <img src="./public/svg/icon-footer.svg" alt="arrow-footer" width="9" height="14">
+                                    درباره ما
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="flex flex-col gap-4">
+                        <h5 class="text-[#183A75] text-base lg:text-lg relative pb-2">
+                            روابط مهمة
+                            <span class="border-b-2 border-[#72839B] rounded-full w-[35px] absolute bottom-0 right-0"></span>
+                        </h5>
+                        <ul>
+                            <li class="mt-4">
+                                <a href="#" class="flex items-center gap-3 text-[#183A75] hover:text-[#FC5A31] transition-colors duration-200 hover:transition-colors hover:duration-200 text-sm lg:text-base">
+                                    <img src="./public/svg/icon-footer.svg" alt="arrow-footer" width="9" height="14">
+                                    الصفحة الرئيسية
+                                </a>
+                            </li>
+                            <li class="mt-4">
+                                <a href="#" class="flex items-center gap-3 text-[#183A75] hover:text-[#FC5A31] transition-colors duration-200 hover:transition-colors hover:duration-200 text-sm lg:text-base">
+                                    <img src="./public/svg/icon-footer.svg" alt="arrow-footer" width="9" height="14">
+                                    خلونا السوا
+                                </a>
+                            </li>
+                            <li class="mt-4">
+                                <a href="#" class="flex items-center gap-3 text-[#183A75] hover:text-[#FC5A31] transition-colors duration-200 hover:transition-colors hover:duration-200 text-sm lg:text-base">
+                                    <img src="./public/svg/icon-footer.svg" alt="arrow-footer" width="9" height="14">
+                                    تماس با ما
+                                </a>
+                            </li>
+                            <li class="mt-4">
+                                <a href="#" class="flex items-center gap-3 text-[#183A75] hover:text-[#FC5A31] transition-colors duration-200 hover:transition-colors hover:duration-200 text-sm lg:text-base">
+                                    <img src="./public/svg/icon-footer.svg" alt="arrow-footer" width="9" height="14">
+                                    درباره ما
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <p class="text-[#183A75] text-base lg:text-lg xl:w-3/5 mt-2">
+                    <i class="icon-location-fill text-[#183A75] text-base"></i>
+                    <span>دمشق - بلوار كشاورز ، خیابان ۲۰، بین بلوار فجر ۲ و جانبازان، خیابان ۲۱، پلاک ۶۱، واحد ۲</span>
+                </p>
+                <p class="text-[#183A75] text-base lg:text-lg">
+                    <i class="icon-phone-fill text-[#183A75] text-base"></i>
+                    <span>۰۲۱-۸۸۵۹۰۹۶۳</span>
+                </p>
+                <p class="text-[#183A75] text-base lg:text-lg">
+                    <i class="icon-phone-fill text-[#183A75] text-base"></i>
+                    <span>۰۹۳۹ ۹۶۰ ۵۵۱۴</span>
+                </p>
+            </div>
+            <div class="relative -mt-10 lg:mt-0">
+                <img src="./public/images/iran-footer.png" draggable="false" alt="footer-img" class="absolute top-4 left-4 lg:w-[124px] lg:h-[68px]" width="67" height="36">
+                <picture>
+                    <source media="(min-width:1440px)" srcset="./public/images/footer-img.webp" >
+                    <source media="(min-width:1024px)" srcset="./public/images/footer-img-tab.webp" >
+                    <img src="./public/images/footer-img-mobile.webp" alt="footer-img" draggable="false" class="w-full lg:w-[550px] lg:h-[420px] xl:w-[750px] xl:h-[420px]" height="198">
+                </picture>
+            </div>
+        </footer>
+    </div>
+</div>
+
+<script defer type="module" src="./main.js"></script>
+</body>
+</html>

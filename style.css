@@ -1,0 +1,7 @@
+@import "public/css/font.css";
+@import "public/css/icon.css";
+@import "public/css/custom.css";
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;

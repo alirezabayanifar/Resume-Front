@@ -1,0 +1,49 @@
+/*Thin*/
+@font-face {
+  font-family: "Anjoman";
+  src: url("../font/Anjoman-Thin.woff");
+  font-weight: 100;
+  font-display: swap;
+}
+/*Light*/
+@font-face {
+  font-family: "Anjoman";
+  src: url("../font/Anjoman-Light.woff");
+  font-weight: 200;
+  font-display: swap;
+}
+/*Normal*/
+@font-face {
+  font-family: "Anjoman";
+  src: url("../font/Anjoman-Regular.woff");
+  font-weight: 300;
+  font-display: swap;
+}
+/*Medium*/
+@font-face {
+  font-family: "Anjoman";
+  src: url("../font/Anjoman-Medium.woff");
+  font-weight: 400;
+  font-display: swap;
+}
+/*SemiBold*/
+@font-face {
+  font-family: "Anjoman";
+  src: url("../font/Anjoman-SemiBold.woff");
+  font-weight: 500;
+  font-display: swap;
+}
+/*Bold*/
+@font-face {
+  font-family: "Anjoman";
+  src: url("../font/Anjoman-Bold.woff");
+  font-weight: 600;
+  font-display: swap;
+}
+/*ExtraBold*/
+@font-face {
+  font-family: "Anjoman";
+  src: url("../font/Anjoman-ExtraBold.woff");
+  font-weight: 700;
+  font-display: swap;
+}
