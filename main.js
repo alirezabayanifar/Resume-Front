@@ -1,90 +1,66 @@
 import './style.css';
+import 'flowbite';
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 
-import fjGallery from "flickr-justified-gallery";
-import PhotoSwipeLightbox from "photoswipe/lightbox";
-import "photoswipe/style.css";
-const lightbox = new PhotoSwipeLightbox({
-    gallery: "#my-gallery",
-    children: "a",
-    pswpModule: () => import("photoswipe"),
-    padding: { top: 20, bottom: 40, left: 100, right: 100 }
-});
-lightbox.init();
-fjGallery(document.querySelectorAll('.fj-gallery'), {
-    itemSelector: '.fj-gallery-item',
-    gutter: 10,
-    rowHeight: 250,
-    onJustify: function() {
-        const opa = document.querySelector('.fj-gallery');
-        opa.style.opacity = '1';
-    },
-});
+function animateFrom(elem, direction) {
+    direction = direction || 1;
+    let x = 0,
+        y = direction * 100;
+    if(elem.classList.contains("gs_reveal_fromLeft")) {
+        x = -100;
+        y = 0;
+    } else if (elem.classList.contains("gs_reveal_fromRight")) {
+        x = 100;
+        y = 0;
+    }
+    elem.style.transform = "translate(" + x + "px, " + y + "px)";
+    elem.style.opacity = "0";
+    gsap.fromTo(elem, {x: x, y: y, autoAlpha: 0}, {
+        duration: 1.25,
+        x: 0,
+        y: 0,
+        autoAlpha: 1,
+        ease: "expo",
+        overwrite: "auto"
+    });
+}
+function hide(elem) {
+    gsap.set(elem, {autoAlpha: 0});
+}
+document.addEventListener("DOMContentLoaded", function() {
+    gsap.registerPlugin(ScrollTrigger);
 
+    gsap.utils.toArray(".gs_reveal").forEach(function(elem) {
+        hide(elem); // assure that the element is hidden when scrolled into view
 
-// Import the necessary components
-import {
-    Tab,
-    initTE,
-    Modal,
-    Dropdown,
-    Ripple,
-    Select
-} from 'tw-elements';
-// Initialize the components
-initTE({ Modal, Dropdown, Ripple, Select, Tab});
+        ScrollTrigger.create({
+            trigger: elem,
+            onEnter: function() { animateFrom(elem) },
+            onEnterBack: function() { animateFrom(elem, -1) },
+            onLeave: function() { hide(elem) } // assure that the element is hidden when scrolled into view
+        });
+    });
 
-// Swiper Js
-import Swiper from 'swiper/bundle';
-import 'swiper/css/bundle';
-// home slier blog
-let swiper1 = new Swiper(".blog-slider", {
-    loop: true,
-    slidesPerView: "auto",
-    spaceBetween: 12,
-    centeredSlides: true,
-    breakpoints: {
-        1024: {
-            spaceBetween: 20,
-        },
-    },
-    navigation: {
-        nextEl: ".swiper-button-next",
-        prevEl: ".swiper-button-prev",
-    },
+    let header_animate = document.querySelector('.header-animate');
+    let hero_animate = document.querySelector('.hero-animate');
 
-});
-let swiper2 = new Swiper(".rehle-slider", {
-    loop: true,
-    slidesPerView: 4,
-    width: "60px",
-    centeredSlides: true,
-    spaceBetween: 16,
-    navigation: {
-        nextEl: ".swiper-button-next",
-        prevEl: ".swiper-button-prev",
-    },
-});
-let swiper3 = new Swiper('.swiper-3', {
-    pagination: {
-        el: ".swiper-pagination",
-        dynamicBullets: true,
-    },
-    loop: true,
-    spaceBetween: 15,
-});
-let swiper4 = new Swiper(".blog-slider-single", {
-    loop: true,
-    slidesPerView: 1,
-    spaceBetween: 15,
-    navigation: {
-        nextEl: ".swiper-button-next",
-        prevEl: ".swiper-button-prev",
-    },
+    const header = gsap.timeline({
+        defaults: { duration: 0.5, ease: "power3.out" }
+    });
+    header.fromTo(header_animate, { y: -header_animate.offsetHeight }, { y: 0 });
 
+    const hero = gsap.timeline({
+        defaults: { duration: 0.9, ease: "power4.inOut" }
+    });
+    hero.fromTo(hero_animate, { opacity: 0 }, { opacity: 1 });
 });
 
+
+
+
+//cards
 const cardElements = document.querySelectorAll(".card");
-
 cardElements.forEach(card => {
     card.addEventListener("click", () => {
         cardElements.forEach(otherCard => otherCard.classList.remove("active"));
@@ -92,7 +68,16 @@ cardElements.forEach(card => {
     });
 });
 
+//dark mode
+const toggleButton = document.getElementById('dark-mode-toggle');
+let light = document.getElementById('light');
+let dark = document.getElementById('dark');
+const content = document.querySelector('html');
 
-// Tabs
-import { Tabs } from 'flowbite';
-const tabs = new Tabs();
+toggleButton.addEventListener('click', () => {
+    light.classList.toggle('visible');
+    light.classList.toggle('hidden');
+    dark.classList.toggle('hidden');
+    dark.classList.toggle('visible');
+    content.classList.toggle('dark');
+});

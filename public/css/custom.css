@@ -1,71 +1,53 @@
-
-.main-nav-item.active {
-    @apply font-semibold text-black;
+@layer base {
+    html{
+        @apply font-Poppins;
+    }
+    body{
+        @apply dark:bg-[#111827];
+    }
 }
 
-.border-cus{
-    border-width: 3px;
-    border-style: solid;
-    border-image: linear-gradient(to bottom, red, rgba(0, 0, 0, 0)) 1 100%;
+.menu-item.active{
+    @apply list-disc dark:text-blue-500;
 }
 
-.swiper-button-next::after,.swiper-button-prev::after {
-    content: "" !important;
+.menu-item.active .menu-link{
+    @apply font-semibold;
 }
 
-.btn-slider{
-    @apply  flex justify-center items-center rounded-full transition-all duration-300 bg-[rgba(234,234,234,0.4)] border-2 border-[#E0E0E0] hover:bg-[#FC5A31] hover:border-[#FC5A31];
+.nav-item.active {
+    @apply bg-black text-white;
 }
 
-/*@layer{*/
-/*    .rehle-slider .swiper-slide.swiper-slide-next{*/
-/*        @apply lg:w-[200px] lg:h-auto transition-all duration-300 !important;*/
-/*    }*/
-/*    .rehle-slider .swiper-slide.swiper-slide-next .swiper-content, .rehle-slider .swiper-slide:not(.swiper-slide-active) .swiper-content{*/
-/*        @apply lg:hidden !important;*/
-/*    }*/
-/*}*/
-
-.slider-overlay {
-    background: linear-gradient(180deg, rgba(0, 0, 0, 0.00) 0%, rgba(0, 0, 0, 0.70) 100%);
-}
-
-.swiper-3 .swiper-pagination-bullet{
-    width: 14px !important;
-    height: 14px !important;
-    border: 2px solid #393939;
-    background: transparent;
-    opacity: 1 !important;
-    border-radius: 100%;
-    transition: all 0.3s;
-}
-
-.swiper-3 .swiper-pagination-bullet-active{
-    width: 16px !important;
-    height: 16px !important;
-    border: 2px solid #FC5A31;
-    background: transparent;
-    opacity: 1 !important;
-    border-radius: 100%;
-    transition: all 0.3s;
-}
-
+/* cards */
 .cards {
     display: flex;
     max-width: 1300px;
-    height: 512px;
+    gap: 18px;
 }
 
-.cards .card {
+.cards .card:nth-child(even) {
     position: relative;
-    min-width: 50px;
+    min-width: 200px;
+    min-height: 100px;
     overflow: hidden;
-    margin: 5px;
     background-size: auto 150%;
     background-position: center;
     cursor: pointer;
     transition: 0.5s cubic-bezier(.05, .61, .41, .95);
-    border-radius: 30px;
+    border-radius: 35px;
+}
+
+.cards .card:nth-child(odd) {
+    position: relative;
+    min-width: 300px;
+    min-height: 200px;
+    overflow: hidden;
+    background-size: auto 150%;
+    background-position: center;
+    cursor: pointer;
+    transition: 0.5s cubic-bezier(.05, .61, .41, .95);
+    border-radius: 35px;
 }
 
 .cards .card img {
@@ -80,4 +62,11 @@
 
 .cards .card.active {
     flex-grow: 10000;
+    min-height: 250px;
+}
+
+.gs_reveal {
+    opacity: 0;
+    visibility: hidden;
+    will-change: transform, opacity;
 }

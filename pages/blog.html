@@ -1,757 +1,259 @@
 <!doctype html>
-<html lang="ar" dir="rtl">
+<html lang="en">
 <head>
     <meta charset="UTF-8"/>
     <link rel="icon" type="image/svg+xml" href="/svg/favicon.svg"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>Blog</title>
 </head>
-<body class="bg-[#F5FAFA] font-Anjoman relative">
+<body>
 
-<!--Header-->
-<header class="my-12">
-    <div class="mx-5 lg:container lg:mx-auto">
-        <div class="flex items-center justify-between bg-white p-3 lg:px-4 lg:py-3 xg:px-12 xg:py-5 rounded-lg lg:rounded-full">
-            <div class="flex items-center gap-2">
-                <a href="#" class="hidden lg:block">
-                    <img src="../public/images/iran-flag.png" alt="iran-flag" class="w-full h-full object-contain" width="89" height="56">
+<!-- Nav -->
+<header class="header-animate border-b border-black dark:border-[#4B5563]">
+    <nav class="container bg-white border-gray-200 dark:bg-gray-900">
+        <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto py-4">
+            <!-- Logo -->
+            <a href="#" class="flex items-center space-x-3 rtl:space-x-reverse">
+                <img src="../public/svg/favicon.svg" class="h-8" alt="Flowbite Logo" />
+                <span class="hidden lg:block self-center text-2xl font-semibold whitespace-nowrap dark:text-white">Alireza Bayanifar</span>
+            </a>
+            <!-- Language & Search -->
+            <div class="flex items-center gap-3 md:order-2 space-x-1 md:space-x-0 rtl:space-x-reverse">
+                <!-- Dark Mode -->
+                <button id="dark-mode-toggle" class="text-white hover:bg-gray-300 focus:outline-none focus:ring-4 focus:ring-gray-300
+                        font-medium rounded-2xl text-sm px-3 py-2 dark:hover:bg-gray-600 dark:focus:ring-gray-700 dark:border-gray-700">
+                    <svg id="dark" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 stroke-black dark:stroke-gray-300 visible">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M12 3v2.25m6.364.386-1.591 1.591M21 12h-2.25m-.386 6.364-1.591-1.591M12 18.75V21m-4.773-4.227-1.591 1.591M5.25 12H3m4.227-4.773L5.636 5.636M15.75 12a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0Z" />
+                    </svg>
+                    <svg id="light" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 stroke-black dark:stroke-gray-300 hidden">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M21.752 15.002A9.72 9.72 0 0 1 18 15.75c-5.385 0-9.75-4.365-9.75-9.75 0-1.33.266-2.597.748-3.752A9.753 9.753 0 0 0 3 11.25C3 16.635 7.365 21 12.75 21a9.753 9.753 0 0 0 9.002-5.998Z" />
+                    </svg>
+                </button>
+                <!-- Search Icon -->
+                <a href="#" data-modal-target="default-modal" data-modal-toggle="default-modal" class="border-r border-black pr-3 dark:text-white dark:border-[#4B5563]">
+                    <i class="icon-search text-lg dark:text-[#4B5563]"></i>
                 </a>
-                <a href="#" class="w-[70px] h-[40px] lg:w-[100px] lg:h-[50px]">
-                    <img src="../public/svg/favicon.svg" alt="favicon" class="w-full h-full" width="103" height="56">
-                </a>
+                <!-- Search modal -->
+                <div id="default-modal" tabindex="-1" aria-hidden="true" class="hidden overflow-y-auto overflow-x-hidden fixed top-0 bottom-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-[calc(100%-1rem)] max-h-full">
+                    <div class="relative p-4 w-full max-w-2xl max-h-full">
+                        <form class="max-w-md mx-auto">
+                            <label for="default-search" class="mb-2 text-sm font-medium text-gray-900 sr-only dark:text-white">Search</label>
+                            <div class="relative">
+                                <div class="absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none">
+                                    <svg class="w-4 h-4 text-gray-500 dark:text-gray-400" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20">
+                                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z"/>
+                                    </svg>
+                                </div>
+                                <input type="search" id="default-search" class="block w-full p-4 ps-10 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Search Mockups, Logos..." required />
+                                <button type="submit" class="text-white absolute end-2.5 bottom-2.5 bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Search</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <!-- Language Button -->
+                <button type="button" data-dropdown-toggle="language-dropdown-menu" class="inline-flex items-center gap-2 font-medium justify-center px-4 py-2 text-sm text-[#282D33] dark:text-white border border-black dark:border-[#4B5563] rounded-full cursor-pointer hover:bg-gray-100 dark:hover:bg-gray-700 dark:hover:text-white">
+                    <img src="../public/images/en.png" alt="ir" width="36" height="36" class="w-[26px] h-[26px]">
+                    English (US)
+                </button>
+                <!-- Dropdown Language -->
+                <div class="z-50 hidden my-4 text-base list-none bg-white divide-y divide-gray-100 rounded-lg shadow dark:bg-gray-700" id="language-dropdown-menu">
+                    <ul class="py-2 font-medium" role="none">
+                        <li>
+                            <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:text-gray-400 dark:hover:bg-gray-600 dark:hover:text-white" role="menuitem">
+                                <div class="inline-flex items-center gap-2">
+                                    <img src="../public/images/en.png" alt="ir" width="36" height="36" class="w-[26px] h-[26px]">
+                                    English (US)
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:text-gray-400 dark:hover:bg-gray-600 dark:hover:text-white" role="menuitem">
+                                <div class="inline-flex items-center gap-2">
+                                    <img src="../public/images/ir.png" alt="ir" width="36" height="36" class="w-[26px] h-[26px]">
+                                    Persian (IR)
+                                </div>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
             </div>
-            <nav class="hidden lg:flex items-center gap-4">
-                <img src="../public/svg/titr.svg" width="17" height="25" draggable="false" alt="titr">
-                <ul class="flex items-center space-x-reverse space-x-5 text-[#525252] text-lg font-normal">
-                    <li>
-                        <a href="#" class="main-nav-item font-medium active">الصفحة الرئيسية</a>
+            <!-- Menu -->
+            <div class="items-center justify-between hidden w-full md:flex md:w-auto md:order-1" id="navbar-language">
+                <ul class="flex flex-col font-medium p-4 md:p-0 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
+                    <li class="menu-item active">
+                        <a href="#" class="menu-link menu-link block py-2 px-3 font-light text-[#282D33] rounded md:p-0 md:dark:text-blue-500" aria-current="page">
+                            Home
+                        </a>
                     </li>
                     <li>
-                        <a href="#" class="main-nav-item font-medium hover:text-[#4BC3C4] duration-200 transition-all">خلونا السوا</a>
+                        <a href="#" class="menu-link block py-2 px-3 font-light md:p-0 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent
+                     md:hover:text-blue-700 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white
+                      md:dark:hover:bg-transparent dark:border-gray-700">
+                            About
+                        </a>
                     </li>
                     <li>
-                        <a href="#" class="main-nav-item font-medium hover:text-[#4BC3C4] duration-200 transition-all">فیدیوکست</a>
+                        <a href="#" class="menu-link block py-2 px-3 font-light md:p-0 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent
+                     md:hover:text-blue-700 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white
+                      md:dark:hover:bg-transparent dark:border-gray-700">
+                            Services
+                        </a>
                     </li>
                     <li>
-                        <a href="#" class="main-nav-item font-medium hover:text-[#4BC3C4] duration-200 transition-all">من نحن</a>
+                        <a href="#" class="menu-link block py-2 px-3 font-light md:p-0 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent
+                     md:hover:text-blue-700 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white
+                      md:dark:hover:bg-transparent dark:border-gray-700">
+                            Pricing
+                        </a>
                     </li>
                     <li>
-                        <a href="#" class="main-nav-item font-medium hover:text-[#4BC3C4] duration-200 transition-all">من تواصل</a>
+                        <a href="#" class="menu-link block py-2 px-3 font-light md:p-0 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent
+                     md:hover:text-blue-700 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white
+                      md:dark:hover:bg-transparent dark:border-gray-700">
+                            Contact
+                        </a>
                     </li>
                 </ul>
-                <img src="../public/svg/titr-left.svg" width="17" height="25" draggable="false" alt="titr">
-            </nav>
-            <div class="flex items-center gap-2">
-                <div class="w-[92px] h-[48px] lg:w-[108px] lg:h-[56px] bg-[#E0E0E0] rounded-full">
-                    <div class="flex items-center justify-between w-full h-full px-1">
-                        <a href="#" class="w-[42px] lg:w-[50px] h-[42px] lg:h-[50px] bg-[#393939] rounded-full text-white flex items-center justify-center">AR</a>
-                        <a href="#" class="w-[42px] lg:w-[50px] h-[42px] lg:h-[50px] rounded-full flex items-center justify-center">EN</a>
-                    </div>
-                </div>
-                <a href="#" data-te-toggle="modal" data-te-target="#search" data-te-ripple-init
-                   class="rounded-full w-[48px] h-[48px] lg:w-[56px] lg:h-[56px] bg-[#FC5A31] flex justify-center items-center">
-                    <i class="icon-search text-2xl text-white !leading-[0]"></i>
-                </a>
-                <div data-te-modal-init
-                     class="fixed left-0 top-0 z-[1055] hidden h-full w-full overflow-y-auto overflow-x-hidden outline-none"
-                     id="search"
-                     tabindex="-1"
-                     aria-labelledby="exampleModalLabel"
-                     aria-hidden="true">
-                    <div data-te-modal-dialog-ref class="mx-6 pointer-events-none relative w-auto translate-y-[-50px] opacity-0 transition-all duration-300 mt-24 md:mt-32 ease-in-out min-[576px]:mx-auto min-[576px]:mt-7 lg:container">
-                        <div class="min-[576px]:shadow-[0_0.5rem_1rem_rgba(#000, 0.15)] pointer-events-auto relative flex w-full flex-col border-none bg-transparent outline-none">
-                            <form class="relative" action="">
-                                <div class="relative flex flex-col lg:flex-row items-center gap-4 bg-white rounded-md lg:rounded-lg py-4 px-4">
-                                    <div class="w-full md:w-4/12">
-                                        <label for="searchBar"></label>
-                                        <input type="text" id="searchBar" name="searchBar" placeholder="اكتب الكلمة التي تريدها" class="w-full border-bgLight rounded-[10px] px-2 md:px-6 py-2.5 border bg-transparent outline-none text-blackLight text-sm placeholder-blackLight flex-grow">
-                                    </div>
-                                    <div class="w-full md:w-3/12">
-                                        <label for="subject"></label>
-                                        <select id="subject"
-                                                name="subject"
-                                                data-te-select-init
-                                                data-te-class-notch="!hidden"
-                                                data-te-class-select-option-text="text-sm"
-                                                data-te-class-select-arrow="left-3 absolute cursor-pointer w-5 h-5 top-3"
-                                                data-te-class-select-input="cursor-pointer !p-2.5 border border-gray-300 bg-transparent text-gray-900 text-sm rounded-lg border-bgLight block w-full">
-                                            <option selected>موضوع البحث</option>
-                                            <option value="2">موضوع1</option>
-                                            <option value="3">موضوع2</option>
-                                            <option value="4">موضوع3</option>
-                                            <option value="5">موضوع4</option>
-                                        </select>
-                                    </div>
-                                    <div class="w-full md:w-3/12">
-                                        <label for="content-type"></label>
-                                        <select id="content-type"
-                                                name="content-type"
-                                                data-te-select-init
-                                                data-te-class-notch="!hidden"
-                                                data-te-class-select-option-text="text-sm"
-                                                data-te-class-select-arrow="left-3 absolute cursor-pointer w-5 h-5 top-3"
-                                                data-te-class-select-input="cursor-pointer !p-2.5 border border-gray-300 bg-transparent text-gray-900 text-sm rounded-lg border-bgLight block w-full">
-                                            <option selected>نوع المحتوی</option>
-                                            <option value="2">المحتوی1</option>
-                                            <option value="3">المحتوی2</option>
-                                        </select>
-                                    </div>
-                                    <button type="submit" class="flex-grow-0 w-full md:w-auto md:flex-grow rounded-[10px] bg-[#FC5A31] text-white text-sm p-3">
-                                        يبحث
-                                        <i class="icon-search text-white text-sm"></i>
-                                    </button>
-                                </div>
-                            </form>
-                        </div>
-                    </div>
-                </div>
             </div>
         </div>
-    </div>
+    </nav>
 </header>
-<!--Info-->
-<section class="mb-24">
-    <div class="bg-[url('../public/images/bg-window.webp')] bg-left bg-cover bg-no-repeat bg-[#F9F1F1] rounded-2xl max-w-[1364px] h-[185px] lg:h-[174px] lg:mx-auto mx-2">
-        <div class="container h-full xl:max-w-[1300px] xl:mx-auto xl:px-0 text-center lg:text-right lg:flex lg:flex-col lg:justify-center">
-            <span class="text-[#23386C] text-base lg:text-lg inline-block mt-3.5 mb-3.5 lg:mt-0">مدونـــتــــنا</span>
-            <h2 class="text-[#393939] text-2xl lg:text-4xl flex items-center gap-3 justify-center lg:justify-start">
-                <img src="../public/svg/titr.svg" alt="titr" draggable="false" width="17" height="25" class="lg:w-[26px] lg:h-[35px]">
-                اكتشاف الجمال الطبيعي في إيران
-                <img src="../public/svg/titr.svg" alt="titr" draggable="false" width="17" height="25" class="rotate-180 lg:hidden">
-            </h2>
-        </div>
+<!-- Blog -->
+<section class="container my-10 lg:my-24">
+    <div class="gs_reveal flex flex-col lg:flex-row items-center justify-between gap-y-5 mb-16 lg:mb-24">
+        <h3 class="w-full lg:w-1/2 font-semibold text-black text-5xl lg:text-[80px]">Journal</h3>
+        <p class="w-full lg:w-1/2 font-regular text-black text-lg lg:text-2xl">
+            I love to write about my design and creation process whenever i get a chance. I post new content every week.
+        </p>
     </div>
-    <div class="container -mt-8">
-        <!--Slider Blog-->
-        <div dir="rtl" class="swiper blog-slider-single">
-            <div class="swiper-wrapper">
-                <!--Slides-->
-                <div class="swiper-slide relative rounded-xl lg:rounded-[33px]">
-                    <img src="../public/images/tehran1.png" alt="" class="w-full h-[217px] rounded-lg lg:rounded-xl lg:max-w-[676px] lg:h-[407px] lg:absolute left-0 bottom-11">
-                    <div class="max-w-[310px] mx-auto lg:mx-0 lg:max-w-[1115px] bg-white h-[360px] rounded-lg lg:rounded-xl -mt-4 pt-4 lg:mt-0">
-                        text1
-                    </div>
-                </div>
+    <div class="gs_reveal grid grid-cols-1 lg:grid-cols-3 gap-x-5 gap-y-10">
+        <div class="flex flex-col gap-2">
+            <div class="bg-gray-500 aspect-square rounded-[15px] lg:rounded-[35px] overflow-hidden">
+                <img src="../public/images/j1.png" alt="" class="w-full h-full object-cover">
             </div>
-            <div class="flex items-center justify-center mx-4 md:mx-8 mt-5 pb-4">
-                <div class="flex items-center gap-2">
-                    <!-- If we need navigation buttons -->
-                    <a href="#" class="swiper-button-next !w-12 !h-12 md:!w-14 md:!h-14 btn-slider group !static !mt-0">
-                        <i class="icon-right-arrow-slider text-[#505050] duration-300 transition-all group-hover:text-white text-[12px] lg:text-[14px] !leading-[0]"></i>
-                    </a>
-                    <a href="#" class="swiper-button-prev !w-12 !h-12 md:!w-14 md:!h-14 btn-slider group !static !mt-0">
-                        <i class="icon-left-arrow-slider text-[#505050] duration-300 transition-all group-hover:text-white text-[12px] lg:text-[14px] !leading-[0]"></i>
-                    </a>
-                </div>
+            <span class="font-light text-xs lg:text-lg text-[#51555B] dark:text-gray-400">
+                Jan8 , 2023
+            </span>
+            <h3 class="text-black font-bold text-2xl lg:text-4xl dark:text-gray-300">
+                <a href="#">
+                    10 inspiring graphic design trends for 2024
+                </a>
+            </h3>
+        </div>
+        <div class="flex flex-col gap-2">
+            <div class="bg-gray-500 aspect-square rounded-[15px] lg:rounded-[35px] overflow-hidden">
+                <img src="../public/images/j2.png" alt="" class="w-full h-full object-cover">
             </div>
+            <span class="font-light text-xs lg:text-lg text-[#51555B] dark:text-gray-400">
+                Jan8 , 2023
+            </span>
+            <h3 class="text-black font-bold text-2xl lg:text-4xl dark:text-gray-300">
+                <a href="#">
+                    10 inspiring graphic design trends for 2024
+                </a>
+            </h3>
+        </div>
+        <div class="flex flex-col gap-2">
+            <div class="bg-gray-500 aspect-square rounded-[15px] lg:rounded-[35px] overflow-hidden">
+                <img src="../public/images/j3.png" alt="" class="w-full h-full object-cover">
+            </div>
+            <span class="font-light text-xs lg:text-lg text-[#51555B] dark:text-gray-400">
+                Jan8 , 2023
+            </span>
+            <h3 class="text-black font-bold text-2xl lg:text-4xl dark:text-gray-300">
+                <a href="#">
+                    10 inspiring graphic design trends for 2024
+                </a>
+            </h3>
+        </div>
+        <div class="flex flex-col gap-2">
+            <div class="bg-gray-500 aspect-square rounded-[15px] lg:rounded-[35px] overflow-hidden">
+                <img src="../public/images/j4.png" alt="" class="w-full h-full object-cover">
+            </div>
+            <span class="font-light text-xs lg:text-lg text-[#51555B] dark:text-gray-400">
+                Jan8 , 2023
+            </span>
+            <h3 class="text-black font-bold text-2xl lg:text-4xl dark:text-gray-300">
+                <a href="#">
+                    10 inspiring graphic design trends for 2024
+                </a>
+            </h3>
+        </div>
+        <div class="flex flex-col gap-2">
+            <div class="bg-gray-500 aspect-square rounded-[15px] lg:rounded-[35px] overflow-hidden">
+                <img src="../public/images/04.jpg" alt="" class="w-full h-full object-cover">
+            </div>
+            <span class="font-light text-xs lg:text-lg text-[#51555B] dark:text-gray-400">
+                Jan8 , 2023
+            </span>
+            <h3 class="text-black font-bold text-2xl lg:text-4xl dark:text-gray-300">
+                <a href="#">
+                    10 inspiring graphic design trends for 2024
+                </a>
+            </h3>
         </div>
     </div>
-</section>
-<!--video-cast-->
-<section class="mb-20 lg:mb-24">
-    <div class="container">
-        <h2 class="text-2xl lg:text-4xl text-[#393939] font-semibold flex items-center justify-center gap-1 lg:gap-4 mb-6 lg:mb-10">
-            <picture>
-                <source media="(min-width:1024px)" srcset="../public/svg/title-icon-right.svg">
-                <img src="../public/svg/title-icon-right-mobile.svg" loading="lazy" alt="" draggable="false" class="w-auto h-auto" width="121" height="25">
-            </picture>
-            <span class="text-center">الصور المختارة</span>
-            <picture>
-                <source media="(min-width:1024px)" srcset="../public/svg/title-icon-left.svg">
-                <img src="../public/svg/title-icon-left-mobile.svg" loading="lazy" alt="" draggable="false" class="w-auto h-auto" width="121" height="25">
-            </picture>
-        </h2>
-        <div class="fj-gallery pswp-gallery pswp-gallery--single-column" dir="ltr" id="my-gallery">
-            <a href="../public/images/rehle-slide.png" class="fj-gallery-item" data-pswp-width="1000" data-pswp-height="600" target="_blank">
-                <img class="object-cover rounded-xl lg:rounded-3xl w-full h-full" src="../public/images/rehle-slide.png" alt="">
-            </a>
-            <a href="../public/images/tehran2.png" class="fj-gallery-item" data-pswp-width="1000" data-pswp-height="600" target="_blank">
-                <img class="object-cover rounded-xl lg:rounded-3xl w-full h-full" src="../public/images/tehran2.png" alt="" >
-            </a>
-            <a href="../public/images/nature-4.png" class="fj-gallery-item" data-pswp-width="1000" data-pswp-height="600" target="_blank">
-                <img class="object-cover rounded-xl lg:rounded-3xl w-full h-full" src="../public/images/nature-4.png" alt="" >
-            </a>
-            <a href="../public/images/program-video-cast.png" class="fj-gallery-item" data-pswp-width="1000" data-pswp-height="600" target="_blank">
-                <img class="object-cover rounded-xl lg:rounded-3xl w-full h-full" src="../public/images/program-video-cast.png" alt="" >
-            </a>
-            <a href="../public/images/tehran1.png" class="fj-gallery-item" data-pswp-width="1000" data-pswp-height="600" target="_blank">
-                <img class="object-cover rounded-xl lg:rounded-3xl w-full h-full" src="../public/images/tehran1.png" alt="" >
-            </a>
-            <a href="../public/images/vertical-img.png" class="fj-gallery-item" data-pswp-width="400" data-pswp-height="800" target="_blank">
-                <img class="object-cover rounded-xl lg:rounded-3xl w-full h-full" src="../public/images/vertical-img.png" alt="" >
-            </a>
-            <a href="../public/images/tehran1.png" class="fj-gallery-item" data-pswp-width="1000" data-pswp-height="600" target="_blank">
-                <img class="object-cover rounded-xl lg:rounded-3xl w-full h-full" src="../public/images/tehran1.png" alt="" >
-            </a>
-        </div>
-    </div>
-</section>
-<!--Feat-->
-<section class="mb-20 lg:mb-24">
-    <div class="container">
-        <h2 class="text-2xl lg:text-4xl text-[#393939] font-semibold flex items-center justify-center gap-1 lg:gap-4 mb-6 lg:mb-10">
-            <picture>
-                <source media="(min-width:1024px)" srcset="../public/svg/title-icon-right.svg">
-                <img src="../public/svg/title-icon-right-mobile.svg" loading="lazy" alt="" draggable="false" class="w-auto h-auto" width="121" height="25">
-            </picture>
-            <span class="text-center">فئات</span>
-            <picture>
-                <source media="(min-width:1024px)" srcset="../public/svg/title-icon-left.svg">
-                <img src="../public/svg/title-icon-left-mobile.svg" loading="lazy" alt="" draggable="false" class="w-auto h-auto" width="121" height="25">
-            </picture>
-        </h2>
-    </div>
-    <div class="mb-4 lg:w-fit lg:mx-auto lg:rounded-xl bg-white overflow-hidden">
-        <ul class="container flex gap-5 flex-nowrap text-sm font-medium text-center py-5 px-[18px] overflow-x-scroll whitespace-nowrap" style="scrollbar-width: none" id="default-styled-tab" data-tabs-toggle="#default-styled-tab-content" data-tabs-active-classes="text-white !bg-[#22B2B6]" data-tabs-inactive-classes="text-[#525252]" role="tablist">
-            <li role="presentation">
-                <button class="flex items-center gap-3 px-5 py-3 lg:p-5 rounded-lg bg-[#030439] bg-opacity-15 text-sm lg:text-lg font-bold transition-all duration-200"
-                        id="crafts-styled-tab" data-tabs-target="#styled-crafts" type="button" role="tab" aria-controls="crafts" aria-selected="false">
-                    الحرف اليدوية
-                    <i class="icon-arrow-bottom-flash"></i>
-                </button>
+    <!-- Navigation Numbers -->
+    <nav class="mt-8">
+        <ul class="flex space-x-3 justify-center text-base">
+            <li>
+                <a href="#" class="nav-item active bg-white border border-black rounded-full w-[50px] h-[50px] lg:w-[60px] lg:h-[60px] flex items-center justify-center font-medium text-lg lg:text-2xl hover:bg-black hover:text-white transition-all duration-200">1</a>
             </li>
-            <li role="presentation">
-                <button class="flex items-center gap-3 px-5 py-3 lg:p-5 rounded-lg bg-[#030439] bg-opacity-15 text-sm lg:text-lg font-bold transition-all duration-200"
-                        id="nature-styled-tab" data-tabs-target="#styled-nature" type="button" role="tab" aria-controls="nature" aria-selected="false">
-                    طبيعة
-                    <i class="icon-arrow-bottom-flash"></i>
-                </button>
+            <li>
+                <a href="#" class="nav-item bg-white border border-black rounded-full w-[50px] h-[50px] lg:w-[60px] lg:h-[60px] flex items-center justify-center font-medium text-lg lg:text-2xl hover:bg-black hover:text-white transition-all duration-200">2</a>
             </li>
-            <li role="presentation">
-                <button class="flex items-center gap-3 px-5 py-3 lg:p-5 rounded-lg bg-[#030439] bg-opacity-15 text-sm lg:text-lg font-bold transition-all duration-200"
-                        id="art-styled-tab" data-tabs-target="#styled-art" type="button" role="tab" aria-controls="art" aria-selected="false">
-                    فن وثقافة
-                    <i class="icon-arrow-bottom-flash"></i>
-                </button>
+            <li>
+                <a href="#" class="nav-item bg-white border border-black rounded-full w-[50px] h-[50px] lg:w-[60px] lg:h-[60px] flex items-center justify-center font-medium text-lg lg:text-2xl hover:bg-black hover:text-white transition-all duration-200">3</a>
             </li>
-            <li role="presentation">
-                <button class="flex items-center gap-3 px-5 py-3 lg:p-5 rounded-lg bg-[#030439] bg-opacity-15 text-sm lg:text-lg font-bold transition-all duration-200"
-                        id="society-styled-tab" data-tabs-target="#styled-society" type="button" role="tab" aria-controls="society" aria-selected="false">
-                    المجتمع والإنسانية
-                    <i class="icon-arrow-bottom-flash"></i>
-                </button>
+            <li>
+                <a href="#" class="nav-item bg-white border border-black rounded-full w-[50px] h-[50px] lg:w-[60px] lg:h-[60px] flex items-center justify-center font-medium text-lg lg:text-2xl hover:bg-black hover:text-white transition-all duration-200">4</a>
             </li>
-            <li role="presentation">
-                <button class="flex items-center gap-3 px-5 py-3 lg:p-5 rounded-lg bg-[#030439] bg-opacity-15 text-sm lg:text-lg font-bold transition-all duration-200"
-                        id="city-styled-tab" data-tabs-target="#styled-city" type="button" role="tab" aria-controls="city" aria-selected="false">
-                    المدينة والحياة
-                    <i class="icon-arrow-bottom-flash"></i>
-                </button>
-            </li>
-            <li role="presentation">
-                <button class="flex items-center gap-3 px-5 py-3 lg:p-5 rounded-lg bg-[#030439] bg-opacity-15 text-sm lg:text-lg font-bold transition-all duration-200"
-                        id="old-styled-tab" data-tabs-target="#styled-old" type="button" role="tab" aria-controls="old" aria-selected="false">
-                    تحف قديمه
-                    <i class="icon-arrow-bottom-flash"></i>
-                </button>
+            <li>
+                <a href="#" class="nav-item bg-white border border-black rounded-full w-[50px] h-[50px] lg:w-[60px] lg:h-[60px] flex items-center justify-center font-medium text-lg lg:text-2xl hover:bg-black hover:text-white transition-all duration-200">5</a>
             </li>
         </ul>
-    </div>
-    <div class="container" id="default-styled-tab-content">
-        <div class="hidden p-4 rounded-lg bg-gray-50" id="styled-crafts" role="tabpanel" aria-labelledby="crafts-tab">
-            <div class="grid grid-cols-1 lg:grid-cols-3 gap-5">
-                <figure class="bg-white p-2.5 rounded-2xl lg:rounded-3xl flex flex-col gap-4">
-                    <img src="../public/images/picture-rehle.png" alt="pic-rehle" class="rounded-lg lg:rounded-xl w-full object-cover h-[180px] lg:h-[214px]" width="395" height="214">
-                    <figcaption>
-                        <div class="flex flex-col justify-between items-center">
-                            <div class="flex items-center gap-1">
-                                <i class="icon-calender text-[#274C74] text-xs lg:text-sm"></i>
-                                <span class="text-[#274C74] text-xs lg:text-sm">۲۳ فروردین۱۴۰۳</span>
-                            </div>
-                            <h4 class="my-3">
-                                <a href="#" class="text-[#393939] font-normal text-lg lg:text-2xl">
-                                    استكشاف تاريخ طهران
-                                </a>
-                            </h4>
-                        </div>
-                    </figcaption>
-                </figure>
-                <figure class="bg-white p-2.5 rounded-2xl lg:rounded-3xl flex flex-col gap-4">
-                    <img src="../public/images/picture-rehle.png" alt="pic-rehle" class="rounded-lg lg:rounded-xl w-full object-cover h-[180px] lg:h-[214px]" width="395" height="214">
-                    <figcaption>
-                        <div class="flex flex-col justify-between items-center">
-                            <div class="flex items-center gap-1">
-                                <i class="icon-calender text-[#274C74] text-xs lg:text-sm"></i>
-                                <span class="text-[#274C74] text-xs lg:text-sm">۲۳ فروردین۱۴۰۳</span>
-                            </div>
-                            <h4 class="my-3">
-                                <a href="#" class="text-[#393939] font-normal text-lg lg:text-2xl">
-                                    استكشاف تاريخ طهران
-                                </a>
-                            </h4>
-                        </div>
-                    </figcaption>
-                </figure>
-                <figure class="bg-white p-2.5 rounded-2xl lg:rounded-3xl flex flex-col gap-4">
-                    <img src="../public/images/picture-rehle.png" alt="pic-rehle" class="rounded-lg lg:rounded-xl w-full object-cover h-[180px] lg:h-[214px]" width="395" height="214">
-                    <figcaption>
-                        <div class="flex flex-col justify-between items-center">
-                            <div class="flex items-center gap-1">
-                                <i class="icon-calender text-[#274C74] text-xs lg:text-sm"></i>
-                                <span class="text-[#274C74] text-xs lg:text-sm">۲۳ فروردین۱۴۰۳</span>
-                            </div>
-                            <h4 class="my-3">
-                                <a href="#" class="text-[#393939] font-normal text-lg lg:text-2xl">
-                                    استكشاف تاريخ طهران
-                                </a>
-                            </h4>
-                        </div>
-                    </figcaption>
-                </figure>
-                <figure class="bg-white p-2.5 rounded-2xl lg:rounded-3xl flex flex-col gap-4">
-                    <img src="../public/images/picture-rehle.png" alt="pic-rehle" class="rounded-lg lg:rounded-xl w-full object-cover h-[180px] lg:h-[214px]" width="395" height="214">
-                    <figcaption>
-                        <div class="flex flex-col justify-between items-center">
-                            <div class="flex items-center gap-1">
-                                <i class="icon-calender text-[#274C74] text-xs lg:text-sm"></i>
-                                <span class="text-[#274C74] text-xs lg:text-sm">۲۳ فروردین۱۴۰۳</span>
-                            </div>
-                            <h4 class="my-3">
-                                <a href="#" class="text-[#393939] font-normal text-lg lg:text-2xl">
-                                    استكشاف تاريخ طهران
-                                </a>
-                            </h4>
-                        </div>
-                    </figcaption>
-                </figure>
-                <figure class="bg-white p-2.5 rounded-2xl lg:rounded-3xl flex flex-col gap-4">
-                    <img src="../public/images/picture-rehle.png" alt="pic-rehle" class="rounded-lg lg:rounded-xl w-full object-cover h-[180px] lg:h-[214px]" width="395" height="214">
-                    <figcaption>
-                        <div class="flex flex-col justify-between items-center">
-                            <div class="flex items-center gap-1">
-                                <i class="icon-calender text-[#274C74] text-xs lg:text-sm"></i>
-                                <span class="text-[#274C74] text-xs lg:text-sm">۲۳ فروردین۱۴۰۳</span>
-                            </div>
-                            <h4 class="my-3">
-                                <a href="#" class="text-[#393939] font-normal text-lg lg:text-2xl">
-                                    استكشاف تاريخ طهران
-                                </a>
-                            </h4>
-                        </div>
-                    </figcaption>
-                </figure>
-                <figure class="bg-white p-2.5 rounded-2xl lg:rounded-3xl flex flex-col gap-4">
-                    <img src="../public/images/picture-rehle.png" alt="pic-rehle" class="rounded-lg lg:rounded-xl w-full object-cover h-[180px] lg:h-[214px]" width="395" height="214">
-                    <figcaption>
-                        <div class="flex flex-col justify-between items-center">
-                            <div class="flex items-center gap-1">
-                                <i class="icon-calender text-[#274C74] text-xs lg:text-sm"></i>
-                                <span class="text-[#274C74] text-xs lg:text-sm">۲۳ فروردین۱۴۰۳</span>
-                            </div>
-                            <h4 class="my-3">
-                                <a href="#" class="text-[#393939] font-normal text-lg lg:text-2xl">
-                                    استكشاف تاريخ طهران
-                                </a>
-                            </h4>
-                        </div>
-                    </figcaption>
-                </figure>
-            </div>
-        </div>
-        <div class="hidden p-4 rounded-lg bg-gray-50" id="styled-nature" role="tabpanel" aria-labelledby="dashboard-tab">
-            <div class="grid grid-cols-1 lg:grid-cols-3 gap-5">
-                <figure class="bg-white p-2.5 rounded-2xl lg:rounded-3xl flex flex-col gap-4">
-                    <img src="../public/images/picture-rehle.png" alt="pic-rehle" class="rounded-lg lg:rounded-xl w-full object-cover h-[180px] lg:h-[214px]" width="395" height="214">
-                    <figcaption>
-                        <div class="flex flex-col justify-between items-center">
-                            <div class="flex items-center gap-1">
-                                <i class="icon-calender text-[#274C74] text-xs lg:text-sm"></i>
-                                <span class="text-[#274C74] text-xs lg:text-sm">۲۳ فروردین۱۴۰۳</span>
-                            </div>
-                            <h4 class="my-3">
-                                <a href="#" class="text-[#393939] font-normal text-lg lg:text-2xl">
-                                    استكشاف تاريخ طهران
-                                </a>
-                            </h4>
-                        </div>
-                    </figcaption>
-                </figure>
-                <figure class="bg-white p-2.5 rounded-2xl lg:rounded-3xl flex flex-col gap-4">
-                    <img src="../public/images/picture-rehle.png" alt="pic-rehle" class="rounded-lg lg:rounded-xl w-full object-cover h-[180px] lg:h-[214px]" width="395" height="214">
-                    <figcaption>
-                        <div class="flex flex-col justify-between items-center">
-                            <div class="flex items-center gap-1">
-                                <i class="icon-calender text-[#274C74] text-xs lg:text-sm"></i>
-                                <span class="text-[#274C74] text-xs lg:text-sm">۲۳ فروردین۱۴۰۳</span>
-                            </div>
-                            <h4 class="my-3">
-                                <a href="#" class="text-[#393939] font-normal text-lg lg:text-2xl">
-                                    استكشاف تاريخ طهران
-                                </a>
-                            </h4>
-                        </div>
-                    </figcaption>
-                </figure>
-                <figure class="bg-white p-2.5 rounded-2xl lg:rounded-3xl flex flex-col gap-4">
-                    <img src="../public/images/picture-rehle.png" alt="pic-rehle" class="rounded-lg lg:rounded-xl w-full object-cover h-[180px] lg:h-[214px]" width="395" height="214">
-                    <figcaption>
-                        <div class="flex flex-col justify-between items-center">
-                            <div class="flex items-center gap-1">
-                                <i class="icon-calender text-[#274C74] text-xs lg:text-sm"></i>
-                                <span class="text-[#274C74] text-xs lg:text-sm">۲۳ فروردین۱۴۰۳</span>
-                            </div>
-                            <h4 class="my-3">
-                                <a href="#" class="text-[#393939] font-normal text-lg lg:text-2xl">
-                                    استكشاف تاريخ طهران
-                                </a>
-                            </h4>
-                        </div>
-                    </figcaption>
-                </figure>
-            </div>
-        </div>
-        <div class="hidden p-4 rounded-lg bg-gray-50" id="styled-art" role="tabpanel" aria-labelledby="settings-tab">
-            <div class="grid grid-cols-1 lg:grid-cols-3 gap-5">
-                <figure class="bg-white p-2.5 rounded-2xl lg:rounded-3xl flex flex-col gap-4">
-                    <img src="../public/images/picture-rehle.png" alt="pic-rehle" class="rounded-lg lg:rounded-xl w-full object-cover h-[180px] lg:h-[214px]" width="395" height="214">
-                    <figcaption>
-                        <div class="flex flex-col justify-between items-center">
-                            <div class="flex items-center gap-1">
-                                <i class="icon-calender text-[#274C74] text-xs lg:text-sm"></i>
-                                <span class="text-[#274C74] text-xs lg:text-sm">۲۳ فروردین۱۴۰۳</span>
-                            </div>
-                            <h4 class="my-3">
-                                <a href="#" class="text-[#393939] font-normal text-lg lg:text-2xl">
-                                    استكشاف تاريخ طهران
-                                </a>
-                            </h4>
-                        </div>
-                    </figcaption>
-                </figure>
-            </div>
-        </div>
-        <div class="hidden p-4 rounded-lg bg-gray-50" id="styled-society" role="tabpanel" aria-labelledby="contacts-tab">
-            <div class="grid grid-cols-1 lg:grid-cols-3 gap-5">
-                <figure class="bg-white p-2.5 rounded-2xl lg:rounded-3xl flex flex-col gap-4">
-                    <img src="../public/images/picture-rehle.png" alt="pic-rehle" class="rounded-lg lg:rounded-xl w-full object-cover h-[180px] lg:h-[214px]" width="395" height="214">
-                    <figcaption>
-                        <div class="flex flex-col justify-between items-center">
-                            <div class="flex items-center gap-1">
-                                <i class="icon-calender text-[#274C74] text-xs lg:text-sm"></i>
-                                <span class="text-[#274C74] text-xs lg:text-sm">۲۳ فروردین۱۴۰۳</span>
-                            </div>
-                            <h4 class="my-3">
-                                <a href="#" class="text-[#393939] font-normal text-lg lg:text-2xl">
-                                    استكشاف تاريخ طهران
-                                </a>
-                            </h4>
-                        </div>
-                    </figcaption>
-                </figure>
-                <figure class="bg-white p-2.5 rounded-2xl lg:rounded-3xl flex flex-col gap-4">
-                    <img src="../public/images/picture-rehle.png" alt="pic-rehle" class="rounded-lg lg:rounded-xl w-full object-cover h-[180px] lg:h-[214px]" width="395" height="214">
-                    <figcaption>
-                        <div class="flex flex-col justify-between items-center">
-                            <div class="flex items-center gap-1">
-                                <i class="icon-calender text-[#274C74] text-xs lg:text-sm"></i>
-                                <span class="text-[#274C74] text-xs lg:text-sm">۲۳ فروردین۱۴۰۳</span>
-                            </div>
-                            <h4 class="my-3">
-                                <a href="#" class="text-[#393939] font-normal text-lg lg:text-2xl">
-                                    استكشاف تاريخ طهران
-                                </a>
-                            </h4>
-                        </div>
-                    </figcaption>
-                </figure>
-            </div>
-        </div>
-        <div class="hidden p-4 rounded-lg bg-gray-50" id="styled-city" role="tabpanel" aria-labelledby="contacts-tab">
-            <div class="grid grid-cols-1 lg:grid-cols-3 gap-5">
-                <figure class="bg-white p-2.5 rounded-2xl lg:rounded-3xl flex flex-col gap-4">
-                    <img src="../public/images/picture-rehle.png" alt="pic-rehle" class="rounded-lg lg:rounded-xl w-full object-cover h-[180px] lg:h-[214px]" width="395" height="214">
-                    <figcaption>
-                        <div class="flex flex-col justify-between items-center">
-                            <div class="flex items-center gap-1">
-                                <i class="icon-calender text-[#274C74] text-xs lg:text-sm"></i>
-                                <span class="text-[#274C74] text-xs lg:text-sm">۲۳ فروردین۱۴۰۳</span>
-                            </div>
-                            <h4 class="my-3">
-                                <a href="#" class="text-[#393939] font-normal text-lg lg:text-2xl">
-                                    استكشاف تاريخ طهران
-                                </a>
-                            </h4>
-                        </div>
-                    </figcaption>
-                </figure>
-                <figure class="bg-white p-2.5 rounded-2xl lg:rounded-3xl flex flex-col gap-4">
-                    <img src="../public/images/picture-rehle.png" alt="pic-rehle" class="rounded-lg lg:rounded-xl w-full object-cover h-[180px] lg:h-[214px]" width="395" height="214">
-                    <figcaption>
-                        <div class="flex flex-col justify-between items-center">
-                            <div class="flex items-center gap-1">
-                                <i class="icon-calender text-[#274C74] text-xs lg:text-sm"></i>
-                                <span class="text-[#274C74] text-xs lg:text-sm">۲۳ فروردین۱۴۰۳</span>
-                            </div>
-                            <h4 class="my-3">
-                                <a href="#" class="text-[#393939] font-normal text-lg lg:text-2xl">
-                                    استكشاف تاريخ طهران
-                                </a>
-                            </h4>
-                        </div>
-                    </figcaption>
-                </figure>
-                <figure class="bg-white p-2.5 rounded-2xl lg:rounded-3xl flex flex-col gap-4">
-                    <img src="../public/images/picture-rehle.png" alt="pic-rehle" class="rounded-lg lg:rounded-xl w-full object-cover h-[180px] lg:h-[214px]" width="395" height="214">
-                    <figcaption>
-                        <div class="flex flex-col justify-between items-center">
-                            <div class="flex items-center gap-1">
-                                <i class="icon-calender text-[#274C74] text-xs lg:text-sm"></i>
-                                <span class="text-[#274C74] text-xs lg:text-sm">۲۳ فروردین۱۴۰۳</span>
-                            </div>
-                            <h4 class="my-3">
-                                <a href="#" class="text-[#393939] font-normal text-lg lg:text-2xl">
-                                    استكشاف تاريخ طهران
-                                </a>
-                            </h4>
-                        </div>
-                    </figcaption>
-                </figure>
-                <figure class="bg-white p-2.5 rounded-2xl lg:rounded-3xl flex flex-col gap-4">
-                    <img src="../public/images/picture-rehle.png" alt="pic-rehle" class="rounded-lg lg:rounded-xl w-full object-cover h-[180px] lg:h-[214px]" width="395" height="214">
-                    <figcaption>
-                        <div class="flex flex-col justify-between items-center">
-                            <div class="flex items-center gap-1">
-                                <i class="icon-calender text-[#274C74] text-xs lg:text-sm"></i>
-                                <span class="text-[#274C74] text-xs lg:text-sm">۲۳ فروردین۱۴۰۳</span>
-                            </div>
-                            <h4 class="my-3">
-                                <a href="#" class="text-[#393939] font-normal text-lg lg:text-2xl">
-                                    استكشاف تاريخ طهران
-                                </a>
-                            </h4>
-                        </div>
-                    </figcaption>
-                </figure>
-                <figure class="bg-white p-2.5 rounded-2xl lg:rounded-3xl flex flex-col gap-4">
-                    <img src="../public/images/picture-rehle.png" alt="pic-rehle" class="rounded-lg lg:rounded-xl w-full object-cover h-[180px] lg:h-[214px]" width="395" height="214">
-                    <figcaption>
-                        <div class="flex flex-col justify-between items-center">
-                            <div class="flex items-center gap-1">
-                                <i class="icon-calender text-[#274C74] text-xs lg:text-sm"></i>
-                                <span class="text-[#274C74] text-xs lg:text-sm">۲۳ فروردین۱۴۰۳</span>
-                            </div>
-                            <h4 class="my-3">
-                                <a href="#" class="text-[#393939] font-normal text-lg lg:text-2xl">
-                                    استكشاف تاريخ طهران
-                                </a>
-                            </h4>
-                        </div>
-                    </figcaption>
-                </figure>
-                <figure class="bg-white p-2.5 rounded-2xl lg:rounded-3xl flex flex-col gap-4">
-                    <img src="../public/images/picture-rehle.png" alt="pic-rehle" class="rounded-lg lg:rounded-xl w-full object-cover h-[180px] lg:h-[214px]" width="395" height="214">
-                    <figcaption>
-                        <div class="flex flex-col justify-between items-center">
-                            <div class="flex items-center gap-1">
-                                <i class="icon-calender text-[#274C74] text-xs lg:text-sm"></i>
-                                <span class="text-[#274C74] text-xs lg:text-sm">۲۳ فروردین۱۴۰۳</span>
-                            </div>
-                            <h4 class="my-3">
-                                <a href="#" class="text-[#393939] font-normal text-lg lg:text-2xl">
-                                    استكشاف تاريخ طهران
-                                </a>
-                            </h4>
-                        </div>
-                    </figcaption>
-                </figure>
-            </div>
-        </div>
-        <div class="hidden p-4 rounded-lg bg-gray-50" id="styled-old" role="tabpanel" aria-labelledby="contacts-tab">
-            <div class="grid grid-cols-1 lg:grid-cols-3 gap-5">
-                <figure class="bg-white p-2.5 rounded-2xl lg:rounded-3xl flex flex-col gap-4">
-                    <img src="../public/images/picture-rehle.png" alt="pic-rehle" class="rounded-lg lg:rounded-xl w-full object-cover h-[180px] lg:h-[214px]" width="395" height="214">
-                    <figcaption>
-                        <div class="flex flex-col justify-between items-center">
-                            <div class="flex items-center gap-1">
-                                <i class="icon-calender text-[#274C74] text-xs lg:text-sm"></i>
-                                <span class="text-[#274C74] text-xs lg:text-sm">۲۳ فروردین۱۴۰۳</span>
-                            </div>
-                            <h4 class="my-3">
-                                <a href="#" class="text-[#393939] font-normal text-lg lg:text-2xl">
-                                    استكشاف تاريخ طهران
-                                </a>
-                            </h4>
-                        </div>
-                    </figcaption>
-                </figure>
-                <figure class="bg-white p-2.5 rounded-2xl lg:rounded-3xl flex flex-col gap-4">
-                    <img src="../public/images/picture-rehle.png" alt="pic-rehle" class="rounded-lg lg:rounded-xl w-full object-cover h-[180px] lg:h-[214px]" width="395" height="214">
-                    <figcaption>
-                        <div class="flex flex-col justify-between items-center">
-                            <div class="flex items-center gap-1">
-                                <i class="icon-calender text-[#274C74] text-xs lg:text-sm"></i>
-                                <span class="text-[#274C74] text-xs lg:text-sm">۲۳ فروردین۱۴۰۳</span>
-                            </div>
-                            <h4 class="my-3">
-                                <a href="#" class="text-[#393939] font-normal text-lg lg:text-2xl">
-                                    استكشاف تاريخ طهران
-                                </a>
-                            </h4>
-                        </div>
-                    </figcaption>
-                </figure>
-                <figure class="bg-white p-2.5 rounded-2xl lg:rounded-3xl flex flex-col gap-4">
-                    <img src="../public/images/picture-rehle.png" alt="pic-rehle" class="rounded-lg lg:rounded-xl w-full object-cover h-[180px] lg:h-[214px]" width="395" height="214">
-                    <figcaption>
-                        <div class="flex flex-col justify-between items-center">
-                            <div class="flex items-center gap-1">
-                                <i class="icon-calender text-[#274C74] text-xs lg:text-sm"></i>
-                                <span class="text-[#274C74] text-xs lg:text-sm">۲۳ فروردین۱۴۰۳</span>
-                            </div>
-                            <h4 class="my-3">
-                                <a href="#" class="text-[#393939] font-normal text-lg lg:text-2xl">
-                                    استكشاف تاريخ طهران
-                                </a>
-                            </h4>
-                        </div>
-                    </figcaption>
-                </figure>
-                <figure class="bg-white p-2.5 rounded-2xl lg:rounded-3xl flex flex-col gap-4">
-                    <img src="../public/images/picture-rehle.png" alt="pic-rehle" class="rounded-lg lg:rounded-xl w-full object-cover h-[180px] lg:h-[214px]" width="395" height="214">
-                    <figcaption>
-                        <div class="flex flex-col justify-between items-center">
-                            <div class="flex items-center gap-1">
-                                <i class="icon-calender text-[#274C74] text-xs lg:text-sm"></i>
-                                <span class="text-[#274C74] text-xs lg:text-sm">۲۳ فروردین۱۴۰۳</span>
-                            </div>
-                            <h4 class="my-3">
-                                <a href="#" class="text-[#393939] font-normal text-lg lg:text-2xl">
-                                    استكشاف تاريخ طهران
-                                </a>
-                            </h4>
-                        </div>
-                    </figcaption>
-                </figure>
-            </div>
-        </div>
-        <div class="flex justify-center mt-6">
-            <a href="#" class="text-white font-light text-sm lg:text-lg bg-[#393939] hover:bg-[#FC5A31] hover:transition-colors hover:duration-300
-                     transition-colors duration-300 px-5 py-2 rounded-full">
-                <span>شاهد المزید</span>
-                <i class="icon-arrow-left-flash text-[8px] lg:text-[10px] mr-4"></i>
-            </a>
-        </div>
-    </div>
+    </nav>
 </section>
-<!--Footer-->
-<footer class="pb-11">
-    <div class="mx-5 lg:container lg:mx-auto">
-        <div class="flex flex-col gap-5 xg:gap-10 lg:flex-row lg:items-stretch lg:justify-between">
-            <div class="w-full h-[95px] bg-[url('./public/images/bg-footer-shape.webp')] lg:w-[90px] lg:h-[420px] bg-cover bg-repeat rounded-xl flex flex-row lg:flex-col items-center justify-around p-4">
-                <h4 class="lg:rotate-[270deg] text-white text-lg font-normal w-full">شبكاتنا الاجتماعية:</h4>
-                <ul class="flex flex-row lg:flex-col gap-2 justify-center">
-                    <li>
-                        <a href="#" class="flex justify-center items-center w-[50px] h-[50px] transition-all duration-300 bg-[#FFE6F0] group hover:bg-[#F6377B] rounded-full border-2 border-white">
-                            <i class="icon-instagram text-[#F6377B] transition-all duration-300 group-hover:text-[#FFE6F0] text-2xl mr-0.5 !leading-[0]"></i>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#" class="flex justify-center items-center w-[50px] h-[50px] transition-all duration-300 bg-[#C4E8FD] group hover:bg-[#2580EB] rounded-full border-2 border-white">
-                            <i class="icon-telegram text-[#2580EB] transition-all duration-300 group-hover:text-[#C4E8FD] text-2xl !leading-[0]"></i>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#" class="flex justify-center items-center w-[50px] h-[50px] transition-all duration-300 bg-[#FFBABA] group hover:bg-[#E63632] rounded-full border-2 border-white">
-                            <i class="icon-youtube text-[#E63632] transition-all duration-300 group-hover:text-[#FFBABA] ml-2 text-lg !leading-[0]"></i>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#" class="flex justify-center items-center w-[50px] h-[50px] transition-all duration-300 bg-[#B6CEFF] group hover:bg-[#1F64D9] rounded-full border-2 border-white">
-                            <i class="icon-facebook text-[#1F64D9] transition-all duration-300 group-hover:text-[#B6CEFF] text-2xl !leading-[0]"></i>
-                        </a>
-                    </li>
-                </ul>
-            </div>
-            <div class="flex flex-col flex-grow lg:w-min justify-between gap-4">
-                <div class="flex gap-14">
-                    <div class="flex flex-col gap-4">
-                        <h5 class="text-[#183A75] text-base lg:text-lg relative pb-2">
-                            الوصول السريع
-                            <span class="border-b-2 border-[#72839B] rounded-full w-[35px] absolute bottom-0 right-0"></span>
-                        </h5>
-                        <ul>
-                            <li class="mt-4">
-                                <a href="#" class="flex items-center gap-3 text-[#183A75] hover:text-[#FC5A31] transition-colors duration-200 hover:transition-colors hover:duration-200 text-sm lg:text-base">
-                                    <img src="../public/svg/icon-footer.svg" alt="arrow-footer" width="9" height="14">
-                                    الصفحة الرئيسية
-                                </a>
-                            </li>
-                            <li class="mt-4">
-                                <a href="#" class="flex items-center gap-3 text-[#183A75] hover:text-[#FC5A31] transition-colors duration-200 hover:transition-colors hover:duration-200 text-sm lg:text-base">
-                                    <img src="../public/svg/icon-footer.svg" alt="arrow-footer" width="9" height="14">
-                                    خلونا السوا
-                                </a>
-                            </li>
-                            <li class="mt-4">
-                                <a href="#" class="flex items-center gap-3 text-[#183A75] hover:text-[#FC5A31] transition-colors duration-200 hover:transition-colors hover:duration-200 text-sm lg:text-base">
-                                    <img src="../public/svg/icon-footer.svg" alt="arrow-footer" width="9" height="14">
-                                    تماس با ما
-                                </a>
-                            </li>
-                            <li class="mt-4">
-                                <a href="#" class="flex items-center gap-3 text-[#183A75] hover:text-[#FC5A31] transition-colors duration-200 hover:transition-colors hover:duration-200 text-sm lg:text-base">
-                                    <img src="../public/svg/icon-footer.svg" alt="arrow-footer" width="9" height="14">
-                                    درباره ما
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="flex flex-col gap-4">
-                        <h5 class="text-[#183A75] text-base lg:text-lg relative pb-2">
-                            روابط مهمة
-                            <span class="border-b-2 border-[#72839B] rounded-full w-[35px] absolute bottom-0 right-0"></span>
-                        </h5>
-                        <ul>
-                            <li class="mt-4">
-                                <a href="#" class="flex items-center gap-3 text-[#183A75] hover:text-[#FC5A31] transition-colors duration-200 hover:transition-colors hover:duration-200 text-sm lg:text-base">
-                                    <img src="../public/svg/icon-footer.svg" alt="arrow-footer" width="9" height="14">
-                                    الصفحة الرئيسية
-                                </a>
-                            </li>
-                            <li class="mt-4">
-                                <a href="#" class="flex items-center gap-3 text-[#183A75] hover:text-[#FC5A31] transition-colors duration-200 hover:transition-colors hover:duration-200 text-sm lg:text-base">
-                                    <img src="../public/svg/icon-footer.svg" alt="arrow-footer" width="9" height="14">
-                                    خلونا السوا
-                                </a>
-                            </li>
-                            <li class="mt-4">
-                                <a href="#" class="flex items-center gap-3 text-[#183A75] hover:text-[#FC5A31] transition-colors duration-200 hover:transition-colors hover:duration-200 text-sm lg:text-base">
-                                    <img src="../public/svg/icon-footer.svg" alt="arrow-footer" width="9" height="14">
-                                    تماس با ما
-                                </a>
-                            </li>
-                            <li class="mt-4">
-                                <a href="#" class="flex items-center gap-3 text-[#183A75] hover:text-[#FC5A31] transition-colors duration-200 hover:transition-colors hover:duration-200 text-sm lg:text-base">
-                                    <img src="../public/svg/icon-footer.svg" alt="arrow-footer" width="9" height="14">
-                                    درباره ما
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-                <p class="text-[#183A75] text-base lg:text-lg lg:w-3/5">
-                    <i class="icon-location-fill text-[#183A75] text-base"></i>
-                    <span>دمشق - بلوار كشاورز ، خیابان ۲۰، بین بلوار فجر ۲ و جانبازان، خیابان ۲۱، پلاک ۶۱، واحد ۲</span>
-                </p>
-                <p class="text-[#183A75] text-base lg:text-lg">
-                    <i class="icon-phone-fill text-[#183A75] text-base"></i>
-                    <span>۰۲۱-۸۸۵۹۰۹۶۳</span>
-                </p>
-                <p class="text-[#183A75] text-base lg:text-lg">
-                    <i class="icon-phone-fill text-[#183A75] text-base"></i>
-                    <span>۰۹۳۹ ۹۶۰ ۵۵۱۴</span>
-                </p>
-            </div>
-            <div class="relative">
-                <img src="../public/images/iran-footer.png" draggable="false" alt="footer-img" class="absolute top-4 left-4 lg:w-[124px] lg:h-[68px]" width="67" height="36">
-                <picture>
-                    <source media="(min-width:1440px)" srcset="../public/images/footer-img.webp" >
-                    <source media="(min-width:1024px)" srcset="../public/images/footer-img-tab.webp" >
-                    <img src="../public/images/footer-img-mobile.webp" alt="footer-img" draggable="false" class="w-full lg:w-[550px] lg:h-[420px] xg:w-[750px] xg:h-[420px]" height="198">
-                </picture>
-            </div>
+<!-- footer -->
+<footer class="container mb-7">
+    <section class="bg-[#1E2022] rounded-[25px] lg:rounded-[50px] dark:bg-gray-800">
+        <div class="flex flex-col items-center justify-center gap-16 w-3/5 mx-auto py-28">
+            <h4 class="text-white dark:text-white font-bold text-[2.5rem] lg:text-[4.5rem] text-center">
+                Let’s create your
+                next big idea.
+            </h4>
+            <a href="#" class="rounded-full py-2.5 px-5 bg-white text-lg lg:text-xl font-medium">
+                Schedule a call
+            </a>
+            <ul class="flex flex-col items-center justify-center gap-10 lg:flex-row">
+                <li>
+                    <a href="#" class="text-white text-base lg:text-lg font-medium hover:text-amber-500">
+                        HOME
+                    </a>
+                </li>
+                <li>
+                    <a href="#" class="text-white text-base lg:text-lg font-medium hover:text-amber-500">
+                        CASE STUDIES
+                    </a>
+                </li>
+                <li>
+                    <a href="#" class="text-white text-base lg:text-lg font-medium hover:text-amber-500">
+                        ABOUT
+                    </a>
+                </li>
+                <li>
+                    <a href="#" class="text-white text-base lg:text-lg font-medium hover:text-amber-500">
+                        CONTACT
+                    </a>
+                </li>
+                <li>
+                    <a href="#" class="text-white text-base lg:text-lg font-medium hover:text-amber-500">
+                        BLOG
+                    </a>
+                </li>
+            </ul>
         </div>
-    </div>
+    </section>
 </footer>
 
 <script defer type="module" src="../main.js"></script>

@@ -1,725 +1,447 @@
 <!doctype html>
-<html lang="ar" dir="rtl">
+<html lang="en">
 <head>
     <meta charset="UTF-8"/>
-    <link rel="preload" as="font" href="./public/font/Anjoman-Thin.woff" type="font/woff2" crossorigin>
-    <link rel="preload" as="font" href="./public/font/Anjoman-Regular.woff" type="font/woff2" crossorigin>
-    <link rel="preload" as="font" href="./public/font/Anjoman-Light.woff" type="font/woff2" crossorigin>
-    <link rel="preload" as="font" href="./public/font/Anjoman-Medium.woff" type="font/woff2" crossorigin>
-    <link rel="preload" as="font" href="./public/font/Anjoman-SemiBold.woff" type="font/woff2" crossorigin>
-    <link rel="preload" as="font" href="./public/font/Anjoman-Bold.woff" type="font/woff2" crossorigin>
-    <link rel="preload" as="font" href="./public/font/Anjoman-ExtraBold.woff" type="font/woff2" crossorigin>
     <link rel="icon" type="image/svg+xml" href="/svg/favicon.svg"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>Home</title>
 </head>
-<body class="bg-[#F5FAFA] font-Anjoman">
+<body>
 
-<!--Header-->
-<header class="mt-4 mb-12 lg:mt-12 lg:mb-11">
-    <div class="container">
-        <div class="flex items-center justify-between bg-white p-3 lg:px-4 lg:py-3 xg:px-[50px] xg:py-5 rounded-lg lg:rounded-full">
-            <div class="flex items-center gap-2.5">
-                <a href="#" class="hidden lg:block">
-                    <img src="./public/images/iran-flag.png" alt="iran-flag" class="w-full h-full object-contain" width="89" height="56">
+
+<!-- Nav -->
+<header class="header-animate border-b border-black dark:border-[#4B5563]">
+    <nav class="container bg-white border-gray-200 dark:bg-gray-900">
+        <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto py-4">
+            <!-- Logo -->
+            <a href="#" class="flex items-center space-x-3 rtl:space-x-reverse">
+                <img src="./public/svg/favicon.svg" class="h-8" alt="Flowbite Logo" />
+                <span class="hidden lg:block self-center text-2xl font-semibold whitespace-nowrap dark:text-white">Alireza Bayanifar</span>
+            </a>
+            <!-- Language & Search -->
+            <div class="flex items-center gap-3 md:order-2 space-x-1 md:space-x-0 rtl:space-x-reverse">
+                <!-- Dark Mode -->
+                <button id="dark-mode-toggle" class="text-white hover:bg-gray-300 focus:outline-none focus:ring-4 focus:ring-gray-300
+                        font-medium rounded-2xl text-sm px-3 py-2 dark:hover:bg-gray-600 dark:focus:ring-gray-700 dark:border-gray-700">
+                    <svg id="dark" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 stroke-black dark:stroke-gray-300 visible">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M12 3v2.25m6.364.386-1.591 1.591M21 12h-2.25m-.386 6.364-1.591-1.591M12 18.75V21m-4.773-4.227-1.591 1.591M5.25 12H3m4.227-4.773L5.636 5.636M15.75 12a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0Z" />
+                    </svg>
+                    <svg id="light" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 stroke-black dark:stroke-gray-300 hidden">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M21.752 15.002A9.72 9.72 0 0 1 18 15.75c-5.385 0-9.75-4.365-9.75-9.75 0-1.33.266-2.597.748-3.752A9.753 9.753 0 0 0 3 11.25C3 16.635 7.365 21 12.75 21a9.753 9.753 0 0 0 9.002-5.998Z" />
+                    </svg>
+                </button>
+                <!-- Search Icon -->
+                <a href="#" data-modal-target="default-modal" data-modal-toggle="default-modal" class="border-r border-black pr-3 dark:text-white dark:border-[#4B5563]">
+                    <i class="icon-search text-lg dark:text-[#4B5563]"></i>
                 </a>
-                <a href="#" class="w-[73px] h-[40px] lg:w-[103px] lg:h-[56px]">
-                    <img src="./public/svg/favicon.svg" alt="favicon" class="w-full h-full" width="103" height="56">
-                </a>
-            </div>
-            <nav class="hidden lg:flex lg:items-center lg:gap-4">
-                <img src="./public/svg/titr.svg" width="15" height="20" draggable="false" alt="titr">
-                <ul class="flex items-center gap-x-5 text-[#525252] text-lg">
-                    <li class="w-fit">
-                        <a href="#" class="main-nav-item font-medium active">الصفحة الرئيسية</a>
-                    </li>
-                    <li class="w-fit">
-                        <a href="#" class="main-nav-item font-medium hover:text-[#4BC3C4] duration-200 transition-all">خلونا السوا</a>
-                    </li>
-                    <li class="w-fit">
-                        <a href="#" class="main-nav-item font-medium hover:text-[#4BC3C4] duration-200 transition-all">فیدیوکست</a>
-                    </li>
-                    <li class="w-fit">
-                        <a href="#" class="main-nav-item font-medium hover:text-[#4BC3C4] duration-200 transition-all">من نحن</a>
-                    </li>
-                    <li class="w-fit">
-                        <a href="#" class="main-nav-item font-medium hover:text-[#4BC3C4] duration-200 transition-all">من تواصل</a>
-                    </li>
-                </ul>
-                <img src="./public/svg/titr-left.svg" width="15" height="20" draggable="false" alt="titr">
-            </nav>
-            <div class="flex items-center gap-2">
-                <div class="w-[87px] h-[48px] lg:w-[108px] lg:h-[56px] bg-[#E0E0E0] rounded-full">
-                    <div class="flex items-center justify-between w-full h-full px-0.5">
-                        <a href="#" class="w-[42px] lg:w-[50px] h-[42px] lg:h-[50px] bg-[#393939] rounded-full text-white flex items-center justify-center">AR</a>
-                        <a href="#" class="w-[42px] lg:w-[50px] h-[42px] lg:h-[50px] rounded-full flex items-center justify-center">EN</a>
+                <!-- Search modal -->
+                <div id="default-modal" tabindex="-1" aria-hidden="true" class="hidden overflow-y-auto overflow-x-hidden fixed top-0 bottom-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-[calc(100%-1rem)] max-h-full">
+                    <div class="relative p-4 w-full max-w-2xl max-h-full">
+                        <form class="max-w-md mx-auto">
+                            <label for="default-search" class="mb-2 text-sm font-medium text-gray-900 sr-only dark:text-white">Search</label>
+                            <div class="relative">
+                                <div class="absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none">
+                                    <svg class="w-4 h-4 text-gray-500 dark:text-gray-400" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20">
+                                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z"/>
+                                    </svg>
+                                </div>
+                                <input type="search" id="default-search" class="block w-full p-4 ps-10 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Search Mockups, Logos..." required />
+                                <button type="submit" class="text-white absolute end-2.5 bottom-2.5 bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Search</button>
+                            </div>
+                        </form>
                     </div>
                 </div>
-                <a href="#" data-te-toggle="modal" data-te-target="#search" data-te-ripple-init
-                class="rounded-full w-[48px] h-[48px] lg:w-[56px] lg:h-[56px] bg-[#FC5A31] flex justify-center items-center">
-                    <i class="icon-search text-2xl text-white !leading-[0]"></i>
-                </a>
-                <div data-te-modal-init
-                     class="fixed left-0 top-0 z-[1055] hidden h-full w-full overflow-y-auto overflow-x-hidden outline-none"
-                     id="search"
-                     tabindex="-1"
-                     aria-labelledby="exampleModalLabel"
-                     aria-hidden="true">
-                    <div data-te-modal-dialog-ref class="mx-6 pointer-events-none relative w-auto translate-y-[-50px] opacity-0 transition-all duration-300 mt-24 md:mt-32 ease-in-out min-[576px]:mx-auto min-[576px]:mt-7 container">
-                        <div class="min-[576px]:shadow-[0_0.5rem_1rem_rgba(#000, 0.15)] pointer-events-auto relative flex w-full flex-col border-none bg-transparent outline-none">
-                            <form class="relative" action="">
-                                <div class="relative flex flex-col lg:flex-row items-center gap-4 bg-white rounded-md lg:rounded-lg py-4 px-4">
-                                    <div class="w-full md:w-4/12">
-                                        <label for="searchBar"></label>
-                                        <input type="text" id="searchBar" name="searchBar" placeholder="اكتب الكلمة التي تريدها" class="w-full border-bgLight rounded-[10px] px-2 md:px-6 py-2.5 border bg-transparent outline-none text-blackLight text-sm placeholder-blackLight flex-grow">
-                                    </div>
-                                    <div class="w-full md:w-3/12">
-                                        <label for="subject"></label>
-                                        <select id="subject"
-                                                name="subject"
-                                                data-te-select-init
-                                                data-te-class-notch="!hidden"
-                                                data-te-class-select-option-text="text-sm"
-                                                data-te-class-select-arrow="left-3 absolute cursor-pointer w-5 h-5 top-3"
-                                                data-te-class-select-input="cursor-pointer !p-2.5 border border-gray-300 bg-transparent text-gray-900 text-sm rounded-lg border-bgLight block w-full">
-                                            <option selected>موضوع البحث</option>
-                                            <option value="2">موضوع1</option>
-                                            <option value="3">موضوع2</option>
-                                            <option value="4">موضوع3</option>
-                                            <option value="5">موضوع4</option>
-                                        </select>
-                                    </div>
-                                    <div class="w-full md:w-3/12">
-                                        <label for="content-type"></label>
-                                        <select id="content-type"
-                                                name="content-type"
-                                                data-te-select-init
-                                                data-te-class-notch="!hidden"
-                                                data-te-class-select-option-text="text-sm"
-                                                data-te-class-select-arrow="left-3 absolute cursor-pointer w-5 h-5 top-3"
-                                                data-te-class-select-input="cursor-pointer !p-2.5 border border-gray-300 bg-transparent text-gray-900 text-sm rounded-lg border-bgLight block w-full">
-                                            <option selected>نوع المحتوی</option>
-                                            <option value="2">المحتوی1</option>
-                                            <option value="3">المحتوی2</option>
-                                        </select>
-                                    </div>
-                                    <button type="submit" class="flex-grow-0 w-full md:w-auto md:flex-grow rounded-[10px] bg-[#FC5A31] text-white text-sm p-3">
-                                        يبحث
-                                        <i class="icon-search text-white text-sm"></i>
-                                    </button>
+                <!-- Language Button -->
+                <button type="button" data-dropdown-toggle="language-dropdown-menu" class="inline-flex items-center gap-2 font-medium justify-center px-4 py-2 text-sm text-[#282D33] dark:text-white border border-black dark:border-[#4B5563] rounded-full cursor-pointer hover:bg-gray-100 dark:hover:bg-gray-700 dark:hover:text-white">
+                    <img src="./public/images/en.png" alt="ir" width="36" height="36" class="w-[26px] h-[26px]">
+                    English (US)
+                </button>
+                <!-- Dropdown Language -->
+                <div class="z-50 hidden my-4 text-base list-none bg-white divide-y divide-gray-100 rounded-lg shadow dark:bg-gray-700" id="language-dropdown-menu">
+                    <ul class="py-2 font-medium" role="none">
+                        <li>
+                            <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:text-gray-400 dark:hover:bg-gray-600 dark:hover:text-white" role="menuitem">
+                                <div class="inline-flex items-center gap-2">
+                                    <img src="./public/images/en.png" alt="ir" width="36" height="36" class="w-[26px] h-[26px]">
+                                    English (US)
                                 </div>
-                            </form>
-                        </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:text-gray-400 dark:hover:bg-gray-600 dark:hover:text-white" role="menuitem">
+                                <div class="inline-flex items-center gap-2">
+                                    <img src="./public/images/ir.png" alt="ir" width="36" height="36" class="w-[26px] h-[26px]">
+                                    Persian (IR)
+                                </div>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <!-- Menu -->
+            <div class="items-center justify-between hidden w-full md:flex md:w-auto md:order-1" id="navbar-language">
+                <ul class="flex flex-col font-medium p-4 md:p-0 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
+                    <li class="menu-item active">
+                        <a href="#" class="menu-link menu-link block py-2 px-3 font-light text-[#282D33] rounded md:p-0 md:dark:text-blue-500" aria-current="page">
+                            Home
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="menu-link block py-2 px-3 font-light md:p-0 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent
+                     md:hover:text-blue-700 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white
+                      md:dark:hover:bg-transparent dark:border-gray-700">
+                            About
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="menu-link block py-2 px-3 font-light md:p-0 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent
+                     md:hover:text-blue-700 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white
+                      md:dark:hover:bg-transparent dark:border-gray-700">
+                            Services
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="menu-link block py-2 px-3 font-light md:p-0 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent
+                     md:hover:text-blue-700 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white
+                      md:dark:hover:bg-transparent dark:border-gray-700">
+                            Pricing
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="menu-link block py-2 px-3 font-light md:p-0 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent
+                     md:hover:text-blue-700 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white
+                      md:dark:hover:bg-transparent dark:border-gray-700">
+                            Contact
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+</header>
+<!-- Hero -->
+<section class="hero-animate container my-10 lg:my-32">
+    <div class="flex flex-col gap-6">
+        <div class="bottom flex flex-wrap lg:flex-nowrap justify-between items-center gap-8">
+            <h1 class="w-full lg:w-1/2 text-[#282D33] dark:text-white font-black text-[2.5rem] lg:text-[4.5rem] !leading-[180%]">
+                Alireza Ba.<br>
+                Web Developer
+            </h1>
+            <div class="w-full lg:w-1/2">
+                <div class="lg:w-4/5 flex flex-col gap-5 ml-auto">
+                    <p class="text-[#282D33] dark:text-white font-medium text-xl lg:text-2xl text-justify">
+                        I create art that is both aesthetically pleasing and emotionally resonant. I also design user interfaces that are intuitive and user-friendly.
+                    </p>
+                    <div class="flex gap-5">
+                        <a href="#" class="py-2 px-5 bg-white font-regular text-sm lg:text-lg text-black border border-black rounded-full
+                                       hover:bg-black hover:text-white dark:text-blue-500 dark:bg-gray-800 dark:border-gray-800 dark:hover:bg-white dark:hover:text-black transition duration-200">
+                            Dribbble
+                        </a>
+                        <a href="#" class="py-2 px-5 bg-white font-regular text-sm lg:text-lg text-black border border-black rounded-full
+                                       hover:bg-black hover:text-white dark:text-blue-500 dark:bg-gray-800 dark:border-gray-800 dark:hover:bg-white dark:hover:text-black transition duration-200">
+                            Behance
+                        </a>
+                        <a href="#" class="py-2 px-5 bg-white font-regular text-sm lg:text-lg text-black border border-black rounded-full
+                                       hover:bg-black hover:text-white dark:text-blue-500 dark:bg-gray-800 dark:border-gray-800 dark:hover:bg-white dark:hover:text-black transition duration-200">
+                            Figma
+                        </a>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-</header>
-<!--Hero-->
-<section class="mb-16 lg:mb-36">
-    <div class="container">
-        <div class="flex flex-col gap-4">
-            <div class="flex flex-col lg:flex-row items-stretch gap-4">
-                <div class="w-auto">
-                    <div class="flex flex-col justify-between gap-3 lg:gap-2.5 w-fit h-full">
-                        <h2 class="font-extrabold text-[#1C1C1C] text-[40px] xg:text-[50px] w-fit">ایـــــران الــــیوم</h2>
-                        <p class="text-[#085E5E] font-medium text-lg lg:text-2xl w-full xg:w-4/5">
-                            قصــص مذهـــــلة عن الســــــفر  إلـــــى أرض الثــقافة والتــــاريخ القـــديمة
-                        </p>
-                        <div class="w-full lg:w-fit bg-white border border-[#E9E9E9] rounded-2xl p-4 ">
-                            <div class="flex flex-col justify-evenly divide-y divide-[#A6A6A6]">
-                                <div class="pb-4">
-                                    <ul class="flex justify-center">
-                                        <li>
-                                            <a href="#" class="flex justify-center items-center w-[60px] h-[60px] z-30 -ml-2 border-2 border-white transition-all duration-300 bg-[#FFE6F0] group hover:bg-[#F6377B] rounded-full">
-                                                <i class="icon-instagram text-[#F6377B] transition-all duration-300 group-hover:text-[#FFE6F0] text-3xl !leading-[0]"></i>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="#" class="flex justify-center items-center w-[60px] h-[60px] z-20 -ml-2 border-2 border-white transition-all duration-300 bg-[#C4E8FD] group hover:bg-[#2580EB] rounded-full">
-                                                <i class="icon-telegram text-[#2580EB] transition-all duration-300 group-hover:text-[#C4E8FD] text-3xl !leading-[0]"></i>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="#" class="flex justify-center items-center w-[60px] h-[60px] z-10 -ml-2 border-2 border-white transition-all duration-300 bg-[#FFBABA] group hover:bg-[#E63632] rounded-full">
-                                                <i class="icon-youtube text-[#E63632] transition-all duration-300 ml-2 group-hover:text-[#FFBABA] text-xl !leading-[0]"></i>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="#" class="flex justify-center items-center w-[60px] h-[60px] border-2 border-white transition-all duration-300 bg-[#B6CEFF] group hover:bg-[#1F64D9] rounded-full">
-                                                <i class="icon-facebook text-[#1F64D9] transition-all duration-300 group-hover:text-[#B6CEFF] text-3xl !leading-[0]"></i>
-                                            </a>
-                                        </li>
-                                    </ul>
-                                </div>
-                                <div class="pt-4">
-                                    <div class="flex items-center justify-center gap-8">
-                                        <div class="font-extrabold text-4xl [direction:ltr] w-1/2">+10k</div>
-                                        <div class="font-normal text-lg w-1/2">فی الشبکات الاجتماعیة</div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+        <div>
+            <div class="cards lg:h-[350px] flex-col lg:flex-row">
+                <!--Slides-->
+                <div class="card active">
+                    <img src="./public/images/hero1.png" alt="" class="w-full h-full object-cover">
                 </div>
-                <div class="w-full">
-                    <div class="relative h-full">
-                        <picture>
-                            <source media="(min-width:1440px)" srcset="./public/images/hero-image.webp">
-                            <source media="(min-width:1024px)" srcset="./public/images/hero-image-tab.webp">
-                            <img src="./public/images/hero-image-mobile.webp" alt="header-img" draggable="false" class="w-full lg:w-[496px] lg:h-full xg:w-[704px] xg:h-[406px]" width="354" height="398">
-                        </picture>
-                        <a href="#"
-                           class="absolute top-1 lg:top-auto lg:bottom-2.5 right-0 font-semibold text-white text-sm xg:text-lg group
-                            bg-[#1C1C1C] transition-colors duration-300 hover:bg-[#4BC3C4] rounded-full p-1 pl-5 lg:pl-2 xl:pl-6 inline-flex items-center gap-3">
-                            <i class="icon-user text-lg bg-[#4BC3C4] transition-colors duration-300 group-hover:bg-[#FC5A31] rounded-full w-[43px] h-[43px] xg:w-[52px] xg:h-[52px] flex items-center justify-center"></i>
-                            <span>مـــن نحـــــــن</span>
-                        </a>
-                    </div>
+                <div class="card">
+                    <img src="./public/images/hero2.png" alt="" class="w-full h-full object-cover">
                 </div>
-                <div class="w-full lg:w-[200px]">
-                    <div class="h-full flex flex-col justify-between relative">
-                        <div class="w-full lg:w-[200px] h-[200px] lg:h-[250px] xg:h-[300px] bg-[#DEB86F] rounded-2xl bg-[url('./public/svg/wave-mobile.svg')] bg-no-repeat lg:bg-[url('./public/svg/wave.svg')] bg-cover">
-                            <div class="flex flex-row justify-around lg:flex-col lg:justify-between lg:items-center h-full">
-                                <div class="pt-10 lg:pt-4">
-                                    <h3 class="text-right md:text-center text-lg font-extrabold text-[#333333] md:text-xl">خلـــونا السوا</h3>
-                                    <p class="text-sm text-[#333333] font-normal md:text-base text-right md:text-center">
-                                        مع حسن کفا
-                                    </p>
-                                </div>
-                                <div class="w-[114px] h-[170px] xg:w-[128px] xg:h-[192px] self-end lg:self-center">
-                                    <img src="./public/images/woman.png" loading="lazy" alt="woman" class="object-contain xg:w-[128px] xg:h-[192px]" width="114" height="170">
-                                </div>
-                            </div>
-                        </div>
-                        <p class="absolute bottom-10 lg:translate-y-0 right-0 left-0 w-1/2 lg:w-auto pr-8 lg:pr-0 pt-4 lg:pt-0 lg:static lg:inline-block text-[#393939] text-justify text-xs lg:text-sm xg:text-lg">
-                            لوريــم إيبســـــوم هو ببســاطة نــــص شـــكلي بمعـــــنى أن الغاية هي الشـــكل
-                        </p>
-                    </div>
-                </div>
-            </div>
-            <div class="flex flex-row-reverse lg:flex-row items-center justify-between gap-4">
-                <div class="w-1/2 lg:w-5/12">
-                    <div class="relative h-[333px] lg:h-[224px] flex items-center justify-between
-                     xg:h-[224px] bg-[#FD6B3D] rounded-xl lg:rounded-2xl overflow-hidden
-                     before:hidden lg:before:block before:w-[270px] before:h-[270px] before:bg-[#FC5A31]
-                     before:rounded-full before:absolute before:-left-28 xg:before:-left-16 before:top-1/2 before:-translate-y-1/2
-                        before:hover:w-[900px] before:duration-500 before:transition-all">
-                        <div class="flex flex-col lg:flex-row items-center justify-between w-full h-full px-2 py-6 lg:p-4 gap-4">
-                            <div class="flex flex-col gap-2 justify-around lg:justify-between items-center lg:items-start h-full">
-                                <img src="./public/images/video.png" loading="lazy" alt="video-icon" width="53" height="53" class="z-50">
-                                <h3 class="text-white font-semibold text-2xl lg:text-4xl w-full text-center lg:text-start z-50">رحلـــــة</h3>
-                                <p class="w-full text-center lg:w-4/5 text-white font-light text-sm lg:text-lg lg:text-start z-50">لوريم إيبسوم هو ببساطة نص شكلي بمعنى أن الغاية هي الشكل.</p>
-                            </div>
-                            <div class="z-30">
-                                <i class="icon-player text-white text-7xl md:text-8xl"></i>
-                            </div>
-                        </div>
-                        <a href="#" class="absolute top-0 bottom-0 right-0 left-0 z-50"></a>
-                    </div>
-                </div>
-                <div class="w-1/2 lg:w-7/12">
-                    <div class="relative h-[333px] lg:h-[224px] flex items-center justify-between
-                     xg:h-[224px] bg-[#4BC2C5] rounded-xl lg:rounded-2xl overflow-hidden
-                     bg-[url('./public/images/bg-hero-podcast.png')] bg-no-repeat lg:[background-position:50%_530%_!important] [background-position:51%_170%_!important]">
-                        <div class="flex flex-col lg:flex-row items-center justify-between w-full h-full px-2 py-2.5 lg:p-7 gap-3 lg:gap-7">
-                            <img src="./public/images/headphone.webp" loading="lazy" alt="podcast-icon" class="lg:w-[90px] xg:w-[128px] h-auto object-cover" width="68" height="74">
-                            <div class="flex flex-col gap-4 justify-center items-start">
-                                <h3 class="text-white font-semibold text-2xl lg:text-4xl w-full text-center lg:text-start">فيديوكاست</h3>
-                                <p class="w-fit text-center text-white font-light text-sm lg:text-lg lg:text-start">لوريم إيبسوم هو ببساطة نص شكلي بمعنى أن الغاية هي الشكل.</p>
-                            </div>
-                            <div class="shrink-0 lg:w-[180px] xg:w-[240px] z-30 relative">
-                                <img src="./public/images/window-podcast.webp" draggable="false" loading="lazy" alt="window-podcast" class="lg:w-[240px] lg:h-auto" width="120" height="80">
-                                <a href="#" class="absolute top-1/2 -translate-y-1/2 right-7 lg:right-12 flex items-center justify-center
-                                               w-[28px] h-[28px] lg:w-[56px] lg:h-[56px] rounded-full bg-white/50 backdrop-blur-sm
-                                               border-2 border-white">
-                                    <i class="icon-arrow-left-flash text-white text-[0.5rem] lg:text-sm ml-1 !leading-[0]"></i>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
+                <div class="card">
+                    <img src="./public/images/hero3.png" alt="" class="w-full h-full object-cover">
                 </div>
             </div>
         </div>
     </div>
 </section>
-<!--BG-Window-GROUP-->
-<div class="relative mb-12">
-    <!--Background-->
-    <div class="absolute top-1/4 lg:top-[36rem] left-0 right-0 w-full h-[1125px] lg:h-[1106px] pointer-events-none
-    bg-[url('./public/images/bg-window-mobile.webp')] lg:bg-[url('./public/images/bg-window.webp')] bg-no-repeat bg-cover bg-center z-[-10]"></div>
-    <!--Blog Slider-->
-    <section class="mb-16 lg:mb-24">
-        <div class="container">
-            <div class="text-center mb-9 lg:mb-10">
-                <h2 class="text-[#FC5A31] font-semibold text-sm lg:text-lg">مدونـــتــــنا</h2>
-                <h3 class="text-2xl lg:text-3xl xg:text-4xl text-[#393939] font-semibold mt-5 flex items-center justify-center gap-1 lg:gap-4">
-                    <picture>
-                        <source media="(min-width:1024px)" srcset="./public/svg/title-icon-right.svg">
-                        <img src="./public/svg/title-icon-right-mobile.svg" loading="lazy" alt="" draggable="false" class="w-auto h-auto" width="121" height="25">
-                    </picture>
-                    <span class="text-center">اكتشا ف الجمال الطبيعي والثقافي في إيران</span>
-                    <picture>
-                        <source media="(min-width:1024px)" srcset="./public/svg/title-icon-left.svg">
-                        <img src="./public/svg/title-icon-left-mobile.svg" loading="lazy" alt="" draggable="false" class="w-auto h-auto" width="121" height="25">
-                    </picture>
-                </h3>
+<!-- Services -->
+<section class="gs_reveal gs_reveal_fromLeft container my-10 lg:my-32">
+    <h2 class="flex gap-3.5 mb-10">
+        <svg width="35" height="30" viewBox="0 0 35 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M32.7727 23.4571H6.98677C3.13007 23.4571 0 20.327 0 16.4703V1.39735C0 0.633467 0.633467 0 1.39735 0C2.16124 0 2.79471 0.633467 2.79471 1.39735V16.4703C2.79471 18.7806 4.67648 20.6624 6.98677 20.6624H32.7727C33.5366 20.6624 34.17 21.2958 34.17 22.0597C34.17 22.8236 33.5366 23.4571 32.7727 23.4571Z" fill="#5E5E5E"/>
+            <path d="M26.8854 29.3445C26.5314 29.3445 26.1774 29.2141 25.8979 28.9346C25.3576 28.3943 25.3576 27.4999 25.8979 26.9596L30.7979 22.0596L25.8979 17.1596C25.3576 16.6193 25.3576 15.725 25.8979 15.1847C26.4382 14.6443 27.3325 14.6443 27.8728 15.1847L33.7604 21.0721C34.0212 21.333 34.1703 21.687 34.1703 22.0596C34.1703 22.4323 34.0212 22.7862 33.7604 23.047L27.8728 28.9346C27.612 29.2141 27.258 29.3445 26.8854 29.3445Z" fill="#5E5E5E"/>
+        </svg>
+        <span class="text-[#5E5E5E] text-lg lg:text-xl font-medium tracking-[0.25rem] !leading-[180%] dark:text-[#4B5563]">
+            SERVICES
+        </span>
+    </h2>
+    <div id="accordion-flush" data-accordion="collapse" data-active-classes="bg-white dark:bg-gray-900 text-black dark:text-white" data-inactive-classes="text-black dark:text-gray-400">
+        <h2 id="accordion-flush-heading-1">
+            <button type="button" class="flex items-center justify-between w-full py-5 font-medium rtl:text-right text-black border-b border-gray-200
+            dark:border-gray-700 dark:text-gray-400 gap-3" data-accordion-target="#accordion-flush-body-1" aria-expanded="true" aria-controls="accordion-flush-body-1">
+                <span class="inline-flex items-center gap-5">
+                    <svg width="46" height="46" viewBox="0 0 46 46" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M14.2109 18.1561L14.1708 16.7724C14.167 16.6588 14.1631 16.5449 14.1631 16.4296C14.1631 10.4784 17.4249 5.08787 22.6755 2.36115L22.9996 2.19275L23.3237 2.36115C28.575 5.08751 31.8368 10.478 31.8368 16.4296C31.8368 16.5495 31.833 16.6687 31.8291 16.7875L31.788 18.1558L30.7379 17.4688C28.4298 15.9596 25.7537 15.1615 23 15.1615C20.2462 15.1615 17.5708 15.9592 15.2631 17.4685L14.2109 18.1561ZM22.9996 13.7553C25.6001 13.7553 28.1373 14.4022 30.4091 15.6361C30.1412 10.652 27.3625 6.18966 22.9996 3.78287C18.6371 6.19001 15.8583 10.6524 15.5904 15.6361C17.8622 14.4022 20.3991 13.7553 22.9996 13.7553Z" fill="#282D33"/>
+                        <path d="M16.1677 32.246C13.1401 32.246 10.1985 31.3685 7.66132 29.7085L7.33191 29.493L7.34351 29.0999C7.49433 23.9101 10.1669 19.1222 14.4929 16.2918L15.5441 15.6041L15.5806 16.8599C15.7335 22.1014 18.7007 26.8492 23.3238 29.2511L24.5254 29.8751L23.3234 30.4988C21.0903 31.6579 18.6828 32.2457 16.1677 32.246ZM8.76593 28.7441C10.9962 30.1163 13.5465 30.8398 16.1677 30.8398C18.011 30.8394 19.7906 30.4924 21.4749 29.8062C17.4488 27.2398 14.791 22.9592 14.2644 18.1849C11.0163 20.732 9.00078 24.5792 8.76593 28.7441Z" fill="#282D33"/>
+                        <path d="M29.8323 32.2453C27.3175 32.2453 24.9097 31.6575 22.6759 30.4981L21.4739 29.8741L22.6759 29.25C27.2993 26.8496 30.2665 22.1017 30.4197 16.8599L30.4563 15.6045L31.5071 16.2921C35.8327 19.1222 38.505 23.9098 38.6565 29.0992L38.6681 29.4926L38.3383 29.7081C35.8015 31.3679 32.8599 32.2453 29.8323 32.2453ZM24.5247 29.8052C26.2094 30.4918 27.989 30.8387 29.8323 30.8387C32.4539 30.8387 35.0041 30.1152 37.2341 28.7431C36.9989 24.5781 34.9837 20.7313 31.736 18.1843C31.2093 22.9592 28.5508 27.2402 24.5247 29.8052Z" fill="#282D33"/>
+                        <path d="M22.9996 30.6665L22.6755 30.4981C17.6 27.862 14.3427 22.6519 14.1751 16.9003L14.1635 16.5069L14.4932 16.2914C17.0304 14.6327 19.972 13.7556 22.9996 13.7552C26.028 13.7552 28.9699 14.6324 31.5071 16.2918L31.8369 16.5073L31.8252 16.901C31.6572 22.6522 28.4 27.8628 23.3238 30.4984L22.9996 30.6665ZM15.5975 17.2561C15.8773 22.217 18.6768 26.6889 22.9996 29.0767C27.3228 26.6889 30.1223 22.2174 30.4025 17.2565C28.1725 15.885 25.6216 15.1619 22.9996 15.1619C20.378 15.1619 17.8278 15.8847 15.5975 17.2561Z" fill="#282D33"/>
+                        <path d="M28.0389 21.1403H26.9839V19.734H28.0389V21.1403ZM25.5776 21.1403H24.1714V19.734H25.5776V21.1403ZM22.7651 21.1403H21.3589V19.734H22.7651V21.1403ZM19.9526 21.1403H18.5464V19.734H19.9526V21.1403Z" fill="#282D33"/>
+                        <path d="M16.1684 32.2457C7.52879 32.2457 0.5 25.1505 0.5 16.4296C0.5 7.70876 7.52879 0.613525 16.1684 0.613525C24.8084 0.613525 31.8372 7.70876 31.8372 16.4296C31.8372 25.1505 24.8084 32.2457 16.1684 32.2457ZM16.1684 2.01978C8.30434 2.01978 1.90625 8.48395 1.90625 16.4296C1.90625 24.3753 8.30434 30.8395 16.1684 30.8395C24.0329 30.8395 30.431 24.3753 30.431 16.4296C30.431 8.48395 24.0329 2.01978 16.1684 2.01978Z" fill="#282D33"/>
+                        <path d="M29.8315 32.2457C21.1919 32.2457 14.1631 25.1505 14.1631 16.4296C14.1631 7.70876 21.1919 0.613525 29.8315 0.613525C38.4712 0.613525 45.5 7.70876 45.5 16.4296C45.5 25.1505 38.4712 32.2457 29.8315 32.2457ZM29.8315 2.01978C21.9674 2.01978 15.5693 8.48395 15.5693 16.4296C15.5693 24.3753 21.9674 30.8395 29.8315 30.8395C37.6956 30.8395 44.0937 24.3753 44.0937 16.4296C44.0937 8.48395 37.6956 2.01978 29.8315 2.01978Z" fill="#282D33"/>
+                        <path d="M23 45.3864C14.3607 45.3864 7.33191 38.2911 7.33191 29.5706C7.33191 20.8501 14.3607 13.7549 23 13.7549C31.6393 13.7549 38.6677 20.8498 38.6677 29.5703C38.6677 38.2908 31.6393 45.3864 23 45.3864ZM23 15.1611C15.1359 15.1611 8.73816 21.625 8.73816 29.5703C8.73816 37.5159 15.1359 43.9798 23 43.9798C30.8637 43.9798 37.2615 37.5156 37.2615 29.5703C37.2615 21.625 30.8637 15.1611 23 15.1611Z" fill="#282D33"/>
+                    </svg>
+                    <span class="text-lg lg:text-3xl">UI.UX</span>
+                </span>
+                <svg width="24" height="28" viewBox="0 0 24 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M12 26L12 2" stroke="#505050" stroke-width="3" stroke-linecap="round"/>
+                    <line x1="1.5" y1="14.5" x2="22.5" y2="14.5" stroke="#505050" stroke-width="3" stroke-linecap="round"/>
+                </svg>
+            </button>
+        </h2>
+        <div id="accordion-flush-body-1" class="hidden" aria-labelledby="accordion-flush-heading-1">
+            <div class="py-5 border-b border-gray-200 dark:border-gray-700">
+                <p class="mb-2 text-gray-500 dark:text-gray-400">Flowbite is an open-source library of interactive components built on top of Tailwind CSS including buttons, dropdowns, modals, navbars, and more.</p>
+                <p class="text-gray-500 dark:text-gray-400">Check out this guide to learn how to <a href="/docs/getting-started/introduction/" class="text-blue-600 dark:text-blue-500 hover:underline">get started</a> and start developing websites even faster with components on top of Tailwind CSS.</p>
             </div>
         </div>
-        <!--Slider Blog-->
-        <div dir="rtl" class="swiper blog-slider">
-            <div class="swiper-wrapper">
-                <!--Slides-->
-                <div class="swiper-slide relative rounded-xl lg:rounded-[33px] !w-[280px] !h-[263px] lg:!w-[687px] lg:!h-[426px] xg:!w-[860px] xg:!h-[492px]">
-                    <img src="./public/images/tehran1.png" loading="lazy" alt="tehran" class="w-full h-full object-cover rounded-xl lg:rounded-[33px]">
-                    <div class="absolute left-3 bottom-3 lg:left-6 lg:bottom-6 w-[189px] h-[163px] lg:w-[333px] lg:h-[223px] xg:w-[392px] xg:h-[220px] bg-white rounded-xl lg:rounded-3xl p-2 lg:p-4">
-                        <div class="flex flex-col justify-center gap-2 lg:gap-4 h-full">
-                            <span class="text-[#969798] text-xs lg:text-base font-light ">۲۴ تیر ۹۹</span>
-                            <h4>
-                                <a href="#" class="font-normal text-lg lg:text-2xl">
-                                    الطرق الجميلة لاكتشاف طهران
-                                </a>
-                            </h4>
-                            <p class="text-[#525252] text-justify text-sm lg:text-lg font-light lg:font-normal">
-                                تُعد طهران، عاصمة إيران، مدينة ذات جمال فريد ومعالم سياحية رائعة تستحق الاستكشاف.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-                <div class="swiper-slide relative rounded-xl lg:rounded-[33px] !w-[280px] !h-[263px] lg:!w-[687px] lg:!h-[426px] xg:!w-[860px] xg:!h-[492px]">
-                    <img src="./public/images/tehran1.png" loading="lazy" alt="tehran" class="w-full h-full object-cover rounded-xl lg:rounded-[33px]">
-                    <div class="absolute left-3 bottom-3 lg:left-6 lg:bottom-6 w-[189px] h-[163px] lg:w-[333px] lg:h-[223px] xg:w-[392px] xg:h-[220px] bg-white rounded-xl lg:rounded-3xl p-2 lg:p-4">
-                        <div class="flex flex-col justify-center gap-2 lg:gap-4 h-full">
-                            <span class="text-[#969798] text-xs lg:text-base font-light ">۲۴ تیر ۹۹</span>
-                            <h4>
-                                <a href="#" class="font-normal text-lg lg:text-2xl">
-                                    الطرق الجميلة لاكتشاف طهران
-                                </a>
-                            </h4>
-                            <p class="text-[#525252] text-justify text-sm lg:text-lg font-light lg:font-normal">
-                                تُعد طهران، عاصمة إيران، مدينة ذات جمال فريد ومعالم سياحية رائعة تستحق الاستكشاف.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-                <div class="swiper-slide relative rounded-xl lg:rounded-[33px] !w-[280px] !h-[263px] lg:!w-[687px] lg:!h-[426px] xg:!w-[860px] xg:!h-[492px]">
-                    <img src="./public/images/tehran1.png" loading="lazy" alt="tehran" class="w-full h-full object-cover rounded-xl lg:rounded-[33px]">
-                    <div class="absolute left-3 bottom-3 lg:left-6 lg:bottom-6 w-[189px] h-[163px] lg:w-[333px] lg:h-[223px] xg:w-[392px] xg:h-[220px] bg-white rounded-xl lg:rounded-3xl p-2 lg:p-4">
-                        <div class="flex flex-col justify-center gap-2 lg:gap-4 h-full">
-                            <span class="text-[#969798] text-xs lg:text-base font-light ">۲۴ تیر ۹۹</span>
-                            <h4>
-                                <a href="#" class="font-normal text-lg lg:text-2xl">
-                                    الطرق الجميلة لاكتشاف طهران
-                                </a>
-                            </h4>
-                            <p class="text-[#525252] text-justify text-sm lg:text-lg font-light lg:font-normal">
-                                تُعد طهران، عاصمة إيران، مدينة ذات جمال فريد ومعالم سياحية رائعة تستحق الاستكشاف.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-                <div class="swiper-slide relative rounded-xl lg:rounded-[33px] !w-[280px] !h-[263px] lg:!w-[687px] lg:!h-[426px] xg:!w-[860px] xg:!h-[492px]">
-                    <img src="./public/images/tehran1.png" loading="lazy" alt="tehran" class="w-full h-full object-cover rounded-xl lg:rounded-[33px]">
-                    <div class="absolute left-3 bottom-3 lg:left-6 lg:bottom-6 w-[189px] h-[163px] lg:w-[333px] lg:h-[223px] xg:w-[392px] xg:h-[220px] bg-white rounded-xl lg:rounded-3xl p-2 lg:p-4">
-                        <div class="flex flex-col justify-center gap-2 lg:gap-4 h-full">
-                            <span class="text-[#969798] text-xs lg:text-base font-light ">۲۴ تیر ۹۹</span>
-                            <h4>
-                                <a href="#" class="font-normal text-lg lg:text-2xl">
-                                    الطرق الجميلة لاكتشاف طهران
-                                </a>
-                            </h4>
-                            <p class="text-[#525252] text-justify text-sm lg:text-lg font-light lg:font-normal">
-                                تُعد طهران، عاصمة إيران، مدينة ذات جمال فريد ومعالم سياحية رائعة تستحق الاستكشاف.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-                <div class="swiper-slide relative rounded-xl lg:rounded-[33px] !w-[280px] !h-[263px] lg:!w-[687px] lg:!h-[426px] xg:!w-[860px] xg:!h-[492px]">
-                    <img src="./public/images/tehran1.png" loading="lazy" alt="tehran" class="w-full h-full object-cover rounded-xl lg:rounded-[33px]">
-                    <div class="absolute left-3 bottom-3 lg:left-6 lg:bottom-6 w-[189px] h-[163px] lg:w-[333px] lg:h-[223px] xg:w-[392px] xg:h-[220px] bg-white rounded-xl lg:rounded-3xl p-2 lg:p-4">
-                        <div class="flex flex-col justify-center gap-2 lg:gap-4 h-full">
-                            <span class="text-[#969798] text-xs lg:text-base font-light ">۲۴ تیر ۹۹</span>
-                            <h4>
-                                <a href="#" class="font-normal text-lg lg:text-2xl">
-                                    الطرق الجميلة لاكتشاف طهران
-                                </a>
-                            </h4>
-                            <p class="text-[#525252] text-justify text-sm lg:text-lg font-light lg:font-normal">
-                                تُعد طهران، عاصمة إيران، مدينة ذات جمال فريد ومعالم سياحية رائعة تستحق الاستكشاف.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="flex items-center justify-center mx-4 md:mx-8 mt-5 pb-4">
-                <div class="flex items-center gap-2">
-                    <!-- If we need navigation buttons -->
-                    <a href="#" class="swiper-button-next !w-12 !h-12 md:!w-14 md:!h-14 btn-slider group !static !mt-0">
-                        <i class="icon-right-arrow-slider text-[#505050] duration-300 transition-all group-hover:text-white text-[12px] lg:text-[14px] !leading-[0]"></i>
-                    </a>
-                    <a href="#" class="swiper-button-prev !w-12 !h-12 md:!w-14 md:!h-14 btn-slider group !static !mt-0">
-                        <i class="icon-left-arrow-slider text-[#505050] duration-300 transition-all group-hover:text-white text-[12px] lg:text-[14px] !leading-[0]"></i>
-                    </a>
-                </div>
+        <h2 id="accordion-flush-heading-2">
+            <button type="button" class="flex items-center justify-between w-full py-5 font-medium rtl:text-right border-b border-gray-200 dark:border-gray-700 dark:text-gray-400 gap-3" data-accordion-target="#accordion-flush-body-2" aria-expanded="false" aria-controls="accordion-flush-body-2">
+                <span class="inline-flex items-center gap-5">
+                    <svg width="46" height="46" viewBox="0 0 42 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M9.89429 10.2851L7.11096 7.52759L6.01347 8.63537L8.7968 11.3928L9.89429 10.2851Z" fill="#282D33"/>
+                        <path d="M7.1596 13.6112L3.75061 11.6619L2.97673 13.0152L6.38572 14.9646L7.1596 13.6112Z" fill="#282D33"/>
+                        <path d="M5.38814 17.5268L1.58557 16.5172L1.18554 18.024L4.98811 19.0335L5.38814 17.5268Z" fill="#282D33"/>
+                        <path d="M41.2328 17.4453L40.8323 15.9387L37.0312 16.9492L37.4317 18.4558L41.2328 17.4453Z" fill="#282D33"/>
+                        <path d="M39.2937 12.4992L38.5198 11.1459L35.1118 13.0946L35.8857 14.448L39.2937 12.4992Z" fill="#282D33"/>
+                        <path d="M36.1347 8.21224L35.038 7.10486L32.2548 9.86138L33.3516 10.9688L36.1347 8.21224Z" fill="#282D33"/>
+                        <path d="M26.3624 22.1418H15.6163L15.5675 21.4145C15.498 20.3805 15.2691 19.5586 14.923 19.1008C11.2218 14.3828 11.1183 9.84023 11.1183 9.7957C11.1183 4.39414 15.5507 0 20.9995 0C26.4491 0 30.8824 4.39414 30.8824 9.79531C30.8824 9.83984 30.7781 14.3785 27.0679 19.1113C26.7269 19.5602 26.4929 20.3836 26.4156 21.4199L26.3624 22.1418ZM17.0484 20.5824H24.9398C25.0906 19.5566 25.3902 18.7434 25.8339 18.159C29.205 13.859 29.323 9.83398 29.3234 9.79453C29.3234 5.25352 25.589 1.55859 20.9995 1.55859C16.4105 1.55859 12.6773 5.25352 12.6773 9.79531C12.6773 9.83438 12.7929 13.8598 16.1577 18.1492C16.607 18.743 16.9042 19.5574 17.0484 20.5824Z" fill="#282D33"/>
+                        <path d="M19.8208 21.2245L18.3667 11.3162L16.8242 11.5425L18.2783 21.4508L19.8208 21.2245Z" fill="#282D33"/>
+                        <path d="M25.1794 11.5428L23.6373 11.3162L22.1812 21.2248L23.7232 21.4515L25.1794 11.5428Z" fill="#282D33"/>
+                        <path d="M18.7574 13.7317L17.1976 12.6594L18.0804 11.3747L18.7578 11.8407L19.8769 11.0715L20.9969 11.8407L22.1164 11.0719L23.2386 11.8411L23.9203 11.3743L24.8011 12.6602L23.2386 13.7309L22.1172 12.9625L20.9965 13.7313L19.8769 12.9629L18.7574 13.7317Z" fill="#282D33"/>
+                        <path d="M26.2566 20.6887H15.7433V22.2473H26.2566V20.6887Z" fill="#282D33"/>
+                        <path d="M26.2566 23.4293H15.7433V24.9879H26.2566V23.4293Z" fill="#282D33"/>
+                        <path d="M24.4379 26.1692H17.5629V27.7278H24.4379V26.1692Z" fill="#282D33"/>
+                        <path d="M19.1015 21.5895H17.5425V23.9821H19.1015V21.5895Z" fill="#282D33"/>
+                        <path d="M6.2668 22.1547L6.20273 22.0375H5.11328V21.009L10.8113 17.8887L11.5598 19.2559L6.67187 21.9324V22.0375H6.48086L6.2668 22.1547Z" fill="#282D33"/>
+                        <path d="M35.7441 22.1547L35.5305 22.0375H35.3395V21.9324L30.4512 19.2559L31.2004 17.8887L36.898 21.009V22.0375H35.8086L35.7441 22.1547Z" fill="#282D33"/>
+                        <path d="M6.07961 32.1976H4.52063V40.0027H6.07961V32.1976Z" fill="#282D33"/>
+                        <path d="M21.3741 30.4144L5.68457 21.507L4.9149 22.8627L20.6044 31.7701L21.3741 30.4144Z" fill="#282D33"/>
+                        <path d="M20.9902 50L4.52063 40.5821V32.3407H6.07961V39.6778L20.9902 48.2043L35.898 39.6778V31.9954H37.457V40.5821L20.9902 50Z" fill="#282D33"/>
+                        <path d="M37.0645 40.8047L36.2903 39.4512L20.6039 48.4239L21.3781 49.7774L37.0645 40.8047Z" fill="#282D33"/>
+                        <path d="M24.8074 39.7867L19.9379 30.9938L36.9789 21.1094L41.8449 30.0434L24.8074 39.7867ZM22.0422 31.5754L25.4058 37.6488L39.7457 29.4484L36.3758 23.2617L22.0422 31.5754Z" fill="#282D33"/>
+                        <path d="M17.1933 39.8039L0.155029 30.0609L5.02183 21.1254L22.064 31.0109L17.1933 39.8039ZM2.25425 29.4656L16.5957 37.6668L19.9601 31.5922L5.62456 23.2769L2.25425 29.4656Z" fill="#282D33"/>
+                        <path d="M21.7797 30.9446H20.2207V48.9692H21.7797V30.9446Z" fill="#282D33"/>
+                    </svg>
+                    <span class="text-lg lg:text-3xl">Branding</span>
+                </span>
+                <svg width="24" height="28" viewBox="0 0 24 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M12 26L12 2" stroke="#505050" stroke-width="3" stroke-linecap="round"/>
+                    <line x1="1.5" y1="14.5" x2="22.5" y2="14.5" stroke="#505050" stroke-width="3" stroke-linecap="round"/>
+                </svg>
+            </button>
+        </h2>
+        <div id="accordion-flush-body-2" class="hidden" aria-labelledby="accordion-flush-heading-2">
+            <div class="py-5 border-b border-gray-200 dark:border-gray-700">
+                <p class="mb-2 text-gray-500 dark:text-gray-400">Flowbite is first conceptualized and designed using the Figma software so everything you see in the library has a design equivalent in our Figma file.</p>
+                <p class="text-gray-500 dark:text-gray-400">Check out the <a href="https://flowbite.com/figma/" class="text-blue-600 dark:text-blue-500 hover:underline">Figma design system</a> based on the utility classes from Tailwind CSS and components from Flowbite.</p>
             </div>
         </div>
-    </section>
-    <!--About-->
-    <section>
-        <div class="container">
-            <div class="text-center mb-24">
-                <h2 class="text-2xl lg:text-4xl text-[#393939] font-semibold flex items-center justify-center gap-1 lg:gap-4">
-                    <picture>
-                        <source media="(min-width:1024px)" srcset="./public/svg/title-icon-right.svg">
-                        <img src="./public/svg/title-icon-right-mobile.svg" loading="lazy" alt="" draggable="false" class="w-auto h-auto" width="121" height="25">
-                    </picture>
-                    <span class="text-center">من نحــــن</span>
-                    <picture>
-                        <source media="(min-width:1024px)" srcset="./public/svg/title-icon-left.svg">
-                        <img src="./public/svg/title-icon-left-mobile.svg" loading="lazy" alt="" draggable="false" class="w-auto h-auto" width="121" height="25">
-                    </picture>
-                </h2>
-                <p class="w-4/5 lg:2/3 mx-auto text-[#043939] text-center font-light text-sm lg:text-lg leading-[180%] mt-3">
-                    "إيران إليوم" بمثابة دليل كامل للمسافرين والمهتمين بالثقافة والتاريخ الإيراني. ومن بين الخدمات والمعلومات المقدمة في هذا الموقع، يمكننا أن نذكر التعريف بمعالم الجذب السياحي المختلفة في إيران، ودليل السفر، والعادات المحلية، والتعريف بالأبطال التاريخيين والثقافيين الصامدين، والتعريف بالأطعمة المحلية، والأخبار والأحداث الثقافية والسياحية المهمة.
-                </p>
-            </div>
-            <div class="grid grid-cols-2 lg:grid-cols-3 xl:grid-cols-6 place-items-center gap-y-20 gap-x-4">
-                <div class="flex flex-col gap-2">
-                    <div class="relative w-[160px] h-[67px] lg:w-[200px] lg:h-[80px] bg-[#EE6543] rounded-full bg-[url('./public/images/bg-hashur.png')]">
-                        <img src="./public/images/about-woman.png" loading="lazy" alt="about-woman" class="absolute w-[87px] h-[134px] lg:w-[102px] lg:h-[157px] bottom-0 right-1/2 translate-x-1/2">
-                    </div>
-                    <h5 class="text-[#393939] font-semibold text-lg lg:text-2xl">
-                        <a href="#">
-                            حســن حرمــلة
-                        </a>
-                    </h5>
-                    <span class="text-[#525252] font-light text-sm lg:text-lg">محرر القسم فن</span>
-                </div>
-                <div class="flex flex-col gap-2">
-                    <div class="relative w-[160px] h-[67px] lg:w-[200px] lg:h-[80px] bg-[#A27F26] rounded-full bg-[url('./public/images/bg-hashur.png')]">
-                        <img src="./public/images/about-woman.png" loading="lazy" alt="about-woman" class="absolute w-[87px] h-[134px] lg:w-[102px] lg:h-[157px] bottom-0 right-1/2 translate-x-1/2">
-                    </div>
-                    <h5 class="text-[#393939] font-semibold text-lg lg:text-2xl">
-                        <a href="#">
-                            حســن حرمــلة
-                        </a>
-                    </h5>
-                    <span class="text-[#525252] font-light text-sm lg:text-lg">محرر القسم فن</span>
-                </div>
-                <div class="flex flex-col gap-2">
-                    <div class="relative w-[160px] h-[67px] lg:w-[200px] lg:h-[80px] bg-[#BAD746] rounded-full bg-[url('./public/images/bg-hashur.png')]">
-                        <img src="./public/images/about-woman.png" loading="lazy" alt="about-woman" class="absolute w-[87px] h-[134px] lg:w-[102px] lg:h-[157px] bottom-0 right-1/2 translate-x-1/2">
-                    </div>
-                    <h5 class="text-[#393939] font-semibold text-lg lg:text-2xl">
-                        <a href="#">
-                            حســن حرمــلة
-                        </a>
-                    </h5>
-                    <span class="text-[#525252] font-light text-sm lg:text-lg">محرر القسم فن</span>
-                </div>
-                <div class="flex flex-col gap-2">
-                    <div class="relative w-[160px] h-[67px] lg:w-[200px] lg:h-[80px] bg-[#ED8E8E] rounded-full bg-[url('./public/images/bg-hashur.png')]">
-                        <img src="./public/images/about-woman.png" loading="lazy" alt="about-woman" class="absolute w-[87px] h-[134px] lg:w-[102px] lg:h-[157px] bottom-0 right-1/2 translate-x-1/2">
-                    </div>
-                    <h5 class="text-[#393939] font-semibold text-lg lg:text-2xl">
-                        <a href="#">
-                            حســن حرمــلة
-                        </a>
-                    </h5>
-                    <span class="text-[#525252] font-light text-sm lg:text-lg">محرر القسم فن</span>
-                </div>
-                <div class="flex flex-col gap-2">
-                    <div class="relative w-[160px] h-[67px] lg:w-[200px] lg:h-[80px] bg-[#447CCA] rounded-full bg-[url('./public/images/bg-hashur.png')]">
-                        <img src="./public/images/about-woman.png" loading="lazy" alt="about-woman" class="absolute w-[87px] h-[134px] lg:w-[102px] lg:h-[157px] bottom-0 right-1/2 translate-x-1/2">
-                    </div>
-                    <h5 class="text-[#393939] font-semibold text-lg lg:text-2xl">
-                        <a href="#">
-                            حســن حرمــلة
-                        </a>
-                    </h5>
-                    <span class="text-[#525252] font-light text-sm lg:text-lg">محرر القسم فن</span>
-                </div>
-                <div class="flex flex-col gap-2">
-                    <div class="relative w-[160px] h-[67px] lg:w-[200px] lg:h-[80px] bg-[#40B7B8] rounded-full bg-[url('./public/images/bg-hashur.png')]">
-                        <img src="./public/images/about-woman.png" loading="lazy" alt="about-woman" class="absolute w-[87px] h-[134px] lg:w-[102px] lg:h-[157px] bottom-0 right-1/2 translate-x-1/2">
-                    </div>
-                    <h5 class="text-[#393939] font-semibold text-lg lg:text-2xl">
-                        <a href="#">
-                            حســن حرمــلة
-                        </a>
-                    </h5>
-                    <span class="text-[#525252] font-light text-sm lg:text-lg">محرر القسم فن</span>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!--Rehle-->
-    <section class="mt-24 lg:mt-36">
-        <div class="container">
-            <div class="flex flex-col gap-2 mb-9">
-                <div class="flex items-center gap-4">
-                    <img src="./public/svg/titr.svg" loading="lazy" alt="" draggable="false" width="27" height="35">
-                    <h2 class="text-2xl lg:text-3xl xg:text-4xl text-[#393939] font-semibold">
-                        رحـــلة إلى أرض الدهشــة إيران
-                    </h2>
-                </div>
-                <div class="flex justify-between items-center">
-                    <p class="text-[#FC5A31] font-light text-sm lg:text-lg">استكشاف المعالم التاريخية والطبيعية</p>
-                    <a href="#" class="hidden lg:block text-white font-light text-sm lg:text-lg bg-[#393939] hover:bg-[#FC5A31] hover:transition-colors hover:duration-300
-                     transition-colors duration-300 px-5 py-2 rounded-full">
-                        <span>رحـــلة إلى إيران</span>
-                        <i class="icon-arrow-left-flash text-[8px] lg:text-[10px] mr-4"></i>
-                    </a>
-                </div>
-            </div>
-            <div class="cards">
-                <!--Slides-->
-                <div class="card active">
-                    <img src="./public/images/nature-4.png" alt="">
-                </div>
-
-                <div class="card">
-                    <img src="./public/images/nature-5.png" alt="">
-                </div>
-
-                <div class="card">
-                    <img src="./public/images/nature-6.png" alt="">
-                </div>
-
-            </div>
-        </div>
-    </section>
-</div>
-<!--BG-Wave-->
-<div class="bg-[url('../public/svg/bg-wavy-mobile.svg')] lg:bg-[url('../public/svg/bg-wavy.svg')] bg-repeat bg-cover w-full h-full pt-24 pb-14">
-    <div class="container">
-        <!--Last News-->
-        <section>
-            <div class="text-center mb-6 lg:mb-8">
-                <h2 class="text-2xl lg:text-4xl text-[#393939] font-semibold mt-5 flex items-center justify-center gap-1 lg:gap-4">
-                    <picture>
-                        <source media="(min-width:1024px)" srcset="./public/svg/title-icon-right.svg">
-                        <img src="./public/svg/title-icon-right-mobile.svg" loading="lazy" alt="" draggable="false" class="w-auto h-auto" width="121" height="25">
-                    </picture>
-                    <span class="text-center">أخــــرین أخبار</span>
-                    <picture>
-                        <source media="(min-width:1024px)" srcset="./public/svg/title-icon-left.svg">
-                        <img src="./public/svg/title-icon-left-mobile.svg" loading="lazy" alt="" draggable="false" class="w-auto h-auto" width="121" height="25">
-                    </picture>
-                </h2>
-                <p class="w-full lg:w-2/3 lg:mx-auto text-[#043939] text-center font-light text-sm lg:text-lg leading-[180%] mt-6">
-                    استكشاف المعالم التاريخية والطبيعية
-                </p>
-            </div>
-            <div class="grid grid-cols-1 lg:grid-cols-2 xg:grid-cols-3 gap-3 place-items-center place-content-evenly">
-                <figure class="w-full xg:w-[350px] xl:w-[419px] h-full flex flex-col gap-4 bg-white rounded-lg lg:rounded-2xl p-3">
-                    <div class="flex flex-col gap-2">
-                        <img src="./public/images/last-news-1.png" loading="lazy" alt="last-news" class="w-full h-[180px] lg:h-[214px] object-cover rounded-xl" width="331" height="181">
-                        <div class="flex justify-between items-center">
-                            <div class="flex items-center gap-1">
-                                <i class="icon-user-stroke text-[#274C74] text-xs lg:text-sm"></i>
-                                <span class="text-[#274C74] text-xs lg:text-sm">نوشته شده توسط ادمین</span>
-                            </div>
-                            <div class="flex items-center gap-1">
-                                <i class="icon-calender text-[#274C74] text-xs lg:text-sm"></i>
-                                <span class="text-[#274C74] text-xs lg:text-sm">۲۳ فروردین۱۴۰۳</span>
-                            </div>
-                        </div>
-                    </div>
-                    <figcaption>
-                        <div class="flex flex-col gap-3">
-                            <h2>
-                                <a href="#" class="font-semibold text-[#393939] text-lg lg:text-2xl">
-                                    استكشاف تاريخ طهران
-                                </a>
-                            </h2>
-                            <p class="text-[#393939] font-light text-sm lg:text-lg !leading-[160%]">
-                                قم بزيارة المعالم التاريخية مثل القصر الملكي السعيد آباد والبازار الكبير لاكتشاف الثقافة والتاريخ الغني للمدينة.
-                            </p>
-                        </div>
-                    </figcaption>
-                </figure>
-                <figure class="w-full xg:w-[350px] xl:w-[419px] h-full flex flex-col gap-4 bg-white rounded-lg lg:rounded-2xl p-3">
-                    <div class="flex flex-col gap-2">
-                        <img src="./public/images/last-news-1.png" loading="lazy" alt="last-news" class="w-full h-[180px] lg:h-[214px] object-cover rounded-xl" width="331" height="181">
-                        <div class="flex justify-between items-center">
-                            <div class="flex items-center gap-1">
-                                <i class="icon-user-stroke text-[#274C74] text-xs lg:text-sm"></i>
-                                <span class="text-[#274C74] text-xs lg:text-sm">نوشته شده توسط ادمین</span>
-                            </div>
-                            <div class="flex items-center gap-1">
-                                <i class="icon-calender text-[#274C74] text-xs lg:text-sm"></i>
-                                <span class="text-[#274C74] text-xs lg:text-sm">۲۳ فروردین۱۴۰۳</span>
-                            </div>
-                        </div>
-                    </div>
-                    <figcaption>
-                        <div class="flex flex-col gap-3">
-                            <h2>
-                                <a href="#" class="font-semibold text-[#393939] text-lg lg:text-2xl">
-                                    استكشاف تاريخ طهران
-                                </a>
-                            </h2>
-                            <p class="text-[#393939] font-light text-sm lg:text-lg !leading-[160%]">
-                                قم بزيارة المعالم التاريخية مثل القصر الملكي السعيد آباد والبازار الكبير لاكتشاف الثقافة والتاريخ الغني للمدينة.
-                            </p>
-                        </div>
-                    </figcaption>
-                </figure>
-                <figure class="w-full xg:w-[350px] xl:w-[419px] h-full flex flex-col gap-4 bg-white rounded-lg lg:rounded-2xl p-3">
-                    <div class="flex flex-col gap-2">
-                        <img src="./public/images/last-news-1.png" loading="lazy" alt="last-news" class="w-full h-[180px] lg:h-[214px] object-cover rounded-xl" width="331" height="181">
-                        <div class="flex justify-between items-center">
-                            <div class="flex items-center gap-1">
-                                <i class="icon-user-stroke text-[#274C74] text-xs lg:text-sm"></i>
-                                <span class="text-[#274C74] text-xs lg:text-sm">نوشته شده توسط ادمین</span>
-                            </div>
-                            <div class="flex items-center gap-1">
-                                <i class="icon-calender text-[#274C74] text-xs lg:text-sm"></i>
-                                <span class="text-[#274C74] text-xs lg:text-sm">۲۳ فروردین۱۴۰۳</span>
-                            </div>
-                        </div>
-                    </div>
-                    <figcaption>
-                        <div class="flex flex-col gap-3">
-                            <h2>
-                                <a href="#" class="font-semibold text-[#393939] text-lg lg:text-2xl">
-                                    استكشاف تاريخ طهران
-                                </a>
-                            </h2>
-                            <p class="text-[#393939] font-light text-sm lg:text-lg !leading-[160%]">
-                                قم بزيارة المعالم التاريخية مثل القصر الملكي السعيد آباد والبازار الكبير لاكتشاف الثقافة والتاريخ الغني للمدينة.
-                            </p>
-                        </div>
-                    </figcaption>
-                </figure>
-            </div>
-            <div class="flex justify-center mt-6">
-                <a href="#" class="hidden lg:inline-block text-white font-light text-sm lg:text-lg bg-[#393939] hover:bg-[#FC5A31] hover:transition-colors hover:duration-300 transition-colors duration-300 px-5 py-2 rounded-full">
-                    <span>شـــاهد المزید</span>
-                    <i class="icon-arrow-left-flash text-[8px] lg:text-[10px] mr-4"></i>
-                </a>
-            </div>
-        </section>
-        <!--Footer-->
-        <footer class="flex flex-col gap-5 xg:gap-10 lg:flex-row lg:items-stretch lg:justify-between mt-20 lg:mt-36">
-            <div class="w-full h-[95px] bg-[url('./public/images/bg-footer-shape.webp')] lg:w-[90px] lg:h-[420px] bg-cover bg-repeat rounded-xl flex flex-row lg:flex-col items-center justify-around p-4">
-                <h4 class="lg:rotate-[270deg] text-white text-lg font-normal w-full">شبكاتنا الاجتماعية:</h4>
-                <ul class="flex flex-row lg:flex-col gap-2 justify-center">
-                    <li>
-                        <a href="#" class="flex justify-center items-center w-[50px] h-[50px] transition-all duration-300 bg-[#FFE6F0] group hover:bg-[#F6377B] rounded-full border-2 border-white">
-                            <i class="icon-instagram text-[#F6377B] transition-all duration-300 group-hover:text-[#FFE6F0] text-2xl mr-0.5 !leading-[0]"></i>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#" class="flex justify-center items-center w-[50px] h-[50px] transition-all duration-300 bg-[#C4E8FD] group hover:bg-[#2580EB] rounded-full border-2 border-white">
-                            <i class="icon-telegram text-[#2580EB] transition-all duration-300 group-hover:text-[#C4E8FD] text-2xl !leading-[0]"></i>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#" class="flex justify-center items-center w-[50px] h-[50px] transition-all duration-300 bg-[#FFBABA] group hover:bg-[#E63632] rounded-full border-2 border-white">
-                            <i class="icon-youtube text-[#E63632] transition-all duration-300 group-hover:text-[#FFBABA] ml-2 text-lg !leading-[0]"></i>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#" class="flex justify-center items-center w-[50px] h-[50px] transition-all duration-300 bg-[#B6CEFF] group hover:bg-[#1F64D9] rounded-full border-2 border-white">
-                            <i class="icon-facebook text-[#1F64D9] transition-all duration-300 group-hover:text-[#B6CEFF] text-2xl !leading-[0]"></i>
-                        </a>
-                    </li>
+        <h2 id="accordion-flush-heading-3">
+            <button type="button" class="flex items-center justify-between w-full py-5 font-medium rtl:text-right border-b border-gray-200 dark:border-gray-700 dark:text-gray-400 gap-3" data-accordion-target="#accordion-flush-body-3" aria-expanded="false" aria-controls="accordion-flush-body-3">
+                <span class="inline-flex items-center gap-5">
+                    <svg width="46" height="46" viewBox="0 0 50 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M24.9996 35.4521C15.4965 35.4521 7.76526 27.6229 7.76526 18.0002C7.76526 8.37715 15.4965 0.547852 24.9996 0.547852C34.5028 0.547852 42.234 8.37676 42.234 18.0002C42.234 27.6229 34.5028 35.4521 24.9996 35.4521ZM24.9996 2.10996C16.3578 2.10996 9.32737 9.23809 9.32737 17.9998C9.32737 26.7619 16.3578 33.8893 24.9996 33.8893C33.6414 33.8893 40.6719 26.7623 40.6719 17.9998C40.6719 9.23809 33.6414 2.10996 24.9996 2.10996Z" fill="#282D33"/>
+                        <path d="M24.9894 29.2791C19.2835 29.2791 14.5253 24.9431 13.921 19.1931C13.7683 17.733 13.8964 16.2763 14.3015 14.8634L14.6929 13.4978L15.6359 14.5599C16.339 15.3509 17.3628 15.7615 18.4175 15.6466C20.2191 15.4525 21.5273 13.8068 21.3343 11.9771C21.2234 10.9169 20.6101 9.96733 19.6956 9.43647L18.4956 8.74038L19.7132 8.07554C20.9972 7.37437 22.3788 6.93999 23.8198 6.78491C24.2155 6.74233 24.6163 6.72046 25.0124 6.72046C30.7171 6.72046 35.4745 11.0568 36.0777 16.8072C36.7269 22.9884 32.287 28.5548 26.1804 29.215C25.7847 29.2576 25.3839 29.2791 24.9894 29.2791ZM15.5366 16.4998C15.4066 17.3349 15.3855 18.1818 15.4745 19.0298C15.9948 23.9822 20.0855 27.7166 24.989 27.7166C25.3284 27.7166 25.6726 27.6982 26.012 27.6615C31.264 27.0939 35.0827 22.2982 34.523 16.9701C34.0034 12.0173 29.914 8.28218 25.0112 8.28218C24.6714 8.28218 24.3265 8.30093 23.9862 8.33765C23.1491 8.42788 22.3355 8.62788 21.555 8.93452C22.2948 9.71069 22.7726 10.7224 22.887 11.8134C23.1702 14.497 21.2402 16.9134 18.5843 17.1994C17.5183 17.3158 16.437 17.0607 15.5366 16.4998Z" fill="#282D33"/>
+                        <path d="M25 29.7467C14.9535 29.7467 5.74258 25.5323 0.361328 18.4737L0 17.9998L0.361328 17.5264C5.74258 10.467 14.9531 6.25256 25 6.25256C35.0465 6.25256 44.2574 10.467 49.6391 17.5264L50 17.9998L49.6391 18.4733C44.257 25.5323 35.0465 29.7467 25 29.7467ZM1.97422 17.9998C7.10977 24.3885 15.666 28.1842 25 28.1842C34.334 28.1842 42.8902 24.3885 48.0258 17.9998C42.8902 11.6112 34.334 7.81467 25 7.81467C15.6656 7.81467 7.10938 11.6112 1.97422 17.9998Z" fill="#282D33"/>
+                    </svg>
+                    <span class="text-lg lg:text-3xl">Motion</span>
+                </span>
+                <svg width="24" height="28" viewBox="0 0 24 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M12 26L12 2" stroke="#505050" stroke-width="3" stroke-linecap="round"/>
+                    <line x1="1.5" y1="14.5" x2="22.5" y2="14.5" stroke="#505050" stroke-width="3" stroke-linecap="round"/>
+                </svg>
+            </button>
+        </h2>
+        <div id="accordion-flush-body-3" class="hidden" aria-labelledby="accordion-flush-heading-3">
+            <div class="py-5 border-b border-gray-200 dark:border-gray-700">
+                <p class="mb-2 text-gray-500 dark:text-gray-400">The main difference is that the core components from Flowbite are open source under the MIT license, whereas Tailwind UI is a paid product. Another difference is that Flowbite relies on smaller and standalone components, whereas Tailwind UI offers sections of pages.</p>
+                <p class="mb-2 text-gray-500 dark:text-gray-400">However, we actually recommend using both Flowbite, Flowbite Pro, and even Tailwind UI as there is no technical reason stopping you from using the best of two worlds.</p>
+                <p class="mb-2 text-gray-500 dark:text-gray-400">Learn more about these technologies:</p>
+                <ul class="ps-5 text-gray-500 list-disc dark:text-gray-400">
+                    <li><a href="https://flowbite.com/pro/" class="text-blue-600 dark:text-blue-500 hover:underline">Flowbite Pro</a></li>
+                    <li><a href="https://tailwindui.com/" rel="nofollow" class="text-blue-600 dark:text-blue-500 hover:underline">Tailwind UI</a></li>
                 </ul>
             </div>
-            <div class="flex flex-col flex-grow lg:w-min justify-between gap-4">
-                <div class="flex gap-14">
-                    <div class="flex flex-col gap-4">
-                        <h5 class="text-[#183A75] text-base lg:text-lg relative pb-2">
-                            الوصول السريع
-                            <span class="border-b-2 border-[#72839B] rounded-full w-[35px] absolute bottom-0 right-0"></span>
-                        </h5>
-                        <ul>
-                            <li class="mt-4">
-                                <a href="#" class="flex items-center gap-3 text-[#183A75] hover:text-[#FC5A31] transition-colors duration-200 hover:transition-colors hover:duration-200 text-sm lg:text-base">
-                                    <img src="./public/svg/icon-footer.svg" alt="arrow-footer" width="9" height="14">
-                                    الصفحة الرئيسية
-                                </a>
-                            </li>
-                            <li class="mt-4">
-                                <a href="#" class="flex items-center gap-3 text-[#183A75] hover:text-[#FC5A31] transition-colors duration-200 hover:transition-colors hover:duration-200 text-sm lg:text-base">
-                                    <img src="./public/svg/icon-footer.svg" alt="arrow-footer" width="9" height="14">
-                                    خلونا السوا
-                                </a>
-                            </li>
-                            <li class="mt-4">
-                                <a href="#" class="flex items-center gap-3 text-[#183A75] hover:text-[#FC5A31] transition-colors duration-200 hover:transition-colors hover:duration-200 text-sm lg:text-base">
-                                    <img src="./public/svg/icon-footer.svg" alt="arrow-footer" width="9" height="14">
-                                    تماس با ما
-                                </a>
-                            </li>
-                            <li class="mt-4">
-                                <a href="#" class="flex items-center gap-3 text-[#183A75] hover:text-[#FC5A31] transition-colors duration-200 hover:transition-colors hover:duration-200 text-sm lg:text-base">
-                                    <img src="./public/svg/icon-footer.svg" alt="arrow-footer" width="9" height="14">
-                                    درباره ما
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="flex flex-col gap-4">
-                        <h5 class="text-[#183A75] text-base lg:text-lg relative pb-2">
-                            روابط مهمة
-                            <span class="border-b-2 border-[#72839B] rounded-full w-[35px] absolute bottom-0 right-0"></span>
-                        </h5>
-                        <ul>
-                            <li class="mt-4">
-                                <a href="#" class="flex items-center gap-3 text-[#183A75] hover:text-[#FC5A31] transition-colors duration-200 hover:transition-colors hover:duration-200 text-sm lg:text-base">
-                                    <img src="./public/svg/icon-footer.svg" alt="arrow-footer" width="9" height="14">
-                                    الصفحة الرئيسية
-                                </a>
-                            </li>
-                            <li class="mt-4">
-                                <a href="#" class="flex items-center gap-3 text-[#183A75] hover:text-[#FC5A31] transition-colors duration-200 hover:transition-colors hover:duration-200 text-sm lg:text-base">
-                                    <img src="./public/svg/icon-footer.svg" alt="arrow-footer" width="9" height="14">
-                                    خلونا السوا
-                                </a>
-                            </li>
-                            <li class="mt-4">
-                                <a href="#" class="flex items-center gap-3 text-[#183A75] hover:text-[#FC5A31] transition-colors duration-200 hover:transition-colors hover:duration-200 text-sm lg:text-base">
-                                    <img src="./public/svg/icon-footer.svg" alt="arrow-footer" width="9" height="14">
-                                    تماس با ما
-                                </a>
-                            </li>
-                            <li class="mt-4">
-                                <a href="#" class="flex items-center gap-3 text-[#183A75] hover:text-[#FC5A31] transition-colors duration-200 hover:transition-colors hover:duration-200 text-sm lg:text-base">
-                                    <img src="./public/svg/icon-footer.svg" alt="arrow-footer" width="9" height="14">
-                                    درباره ما
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-                <p class="text-[#183A75] text-base lg:text-lg xl:w-3/5 mt-2">
-                    <i class="icon-location-fill text-[#183A75] text-base"></i>
-                    <span>دمشق - بلوار كشاورز ، خیابان ۲۰، بین بلوار فجر ۲ و جانبازان، خیابان ۲۱، پلاک ۶۱، واحد ۲</span>
-                </p>
-                <p class="text-[#183A75] text-base lg:text-lg">
-                    <i class="icon-phone-fill text-[#183A75] text-base"></i>
-                    <span>۰۲۱-۸۸۵۹۰۹۶۳</span>
-                </p>
-                <p class="text-[#183A75] text-base lg:text-lg">
-                    <i class="icon-phone-fill text-[#183A75] text-base"></i>
-                    <span>۰۹۳۹ ۹۶۰ ۵۵۱۴</span>
-                </p>
-            </div>
-            <div class="relative -mt-10 lg:mt-0">
-                <img src="./public/images/iran-footer.png" draggable="false" alt="footer-img" class="absolute top-4 left-4 lg:w-[124px] lg:h-[68px]" width="67" height="36">
-                <picture>
-                    <source media="(min-width:1440px)" srcset="./public/images/footer-img.webp" >
-                    <source media="(min-width:1024px)" srcset="./public/images/footer-img-tab.webp" >
-                    <img src="./public/images/footer-img-mobile.webp" alt="footer-img" draggable="false" class="w-full lg:w-[550px] lg:h-[420px] xl:w-[750px] xl:h-[420px]" height="198">
-                </picture>
-            </div>
-        </footer>
+        </div>
     </div>
-</div>
+</section>
+<!-- Works -->
+<section class="container my-10 lg:my-32">
+    <h2 class="flex gap-3.5 mb-10">
+        <svg width="35" height="30" viewBox="0 0 35 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M32.7727 23.4571H6.98677C3.13007 23.4571 0 20.327 0 16.4703V1.39735C0 0.633467 0.633467 0 1.39735 0C2.16124 0 2.79471 0.633467 2.79471 1.39735V16.4703C2.79471 18.7806 4.67648 20.6624 6.98677 20.6624H32.7727C33.5366 20.6624 34.17 21.2958 34.17 22.0597C34.17 22.8236 33.5366 23.4571 32.7727 23.4571Z" fill="#5E5E5E"/>
+            <path d="M26.8854 29.3445C26.5314 29.3445 26.1774 29.2141 25.8979 28.9346C25.3576 28.3943 25.3576 27.4999 25.8979 26.9596L30.7979 22.0596L25.8979 17.1596C25.3576 16.6193 25.3576 15.725 25.8979 15.1847C26.4382 14.6443 27.3325 14.6443 27.8728 15.1847L33.7604 21.0721C34.0212 21.333 34.1703 21.687 34.1703 22.0596C34.1703 22.4323 34.0212 22.7862 33.7604 23.047L27.8728 28.9346C27.612 29.2141 27.258 29.3445 26.8854 29.3445Z" fill="#5E5E5E"/>
+        </svg>
+        <span class="text-[#5E5E5E] text-lg lg:text-xl font-medium tracking-[0.25rem] !leading-[180%] dark:text-[#4B5563]">
+            WORKS
+        </span>
+    </h2>
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-5">
+        <div class="gs_reveal_fromLeft gs_reveal bg-[#F2F4F7] rounded-[15px] lg:rounded-[35px] px-3 py-7 lg:px-7 lg:py-11">
+            <div class="bg-gray-500 rounded-[15px] aspect-[4/3] overflow-hidden">
+                <img src="./public/images/04.jpg" alt="" class="w-full h-full object-cover">
+            </div>
+            <h3 class="text-black font-bold text-lg lg:text-2xl my-6">Kozmo</h3>
+            <div class="flex items-center gap-2">
+                <a href="#" class="py-2 px-5 bg-transparent font-regular text-sm lg:text-lg text-black border border-black rounded-full
+                                       hover:bg-black hover:text-white dark:text-blue-500 dark:bg-gray-800 dark:border-gray-800 dark:hover:bg-white dark:hover:text-black transition duration-200">
+                    UI.UX
+                </a>
+                <a href="#" class="py-2 px-5 bg-transparent font-regular text-sm lg:text-lg text-black border border-black rounded-full
+                                       hover:bg-black hover:text-white dark:text-blue-500 dark:bg-gray-800 dark:border-gray-800 dark:hover:bg-white dark:hover:text-black transition duration-200">
+                    BRANDING
+                </a>
+            </div>
+        </div>
+        <div class="gs_reveal_fromRight gs_reveal bg-[#F2F4F7] rounded-[15px] lg:rounded-[35px] px-3 py-7 lg:px-7 lg:py-11">
+            <div class="bg-gray-500 rounded-[15px] aspect-[4/3] animate-pulse"></div>
+            <h3 class="text-black font-bold text-lg lg:text-2xl my-6">Kozmo</h3>
+            <div class="flex items-center gap-2">
+                <a href="#" class="py-2 px-5 bg-transparent font-regular text-sm lg:text-lg text-black border border-black rounded-full
+                                       hover:bg-black hover:text-white dark:text-blue-500 dark:bg-gray-800 dark:border-gray-800 dark:hover:bg-white dark:hover:text-black transition duration-200">
+                    UI.UX
+                </a>
+                <a href="#" class="py-2 px-5 bg-transparent font-regular text-sm lg:text-lg text-black border border-black rounded-full
+                                       hover:bg-black hover:text-white dark:text-blue-500 dark:bg-gray-800 dark:border-gray-800 dark:hover:bg-white dark:hover:text-black transition duration-200">
+                    BRANDING
+                </a>
+            </div>
+        </div>
+        <div class="gs_reveal_fromLeft gs_reveal bg-[#F2F4F7] rounded-[15px] lg:rounded-[35px] px-3 py-7 lg:px-7 lg:py-11">
+            <div class="bg-gray-500 rounded-[15px] aspect-[4/3] animate-pulse"></div>
+            <h3 class="text-black font-bold text-lg lg:text-2xl my-6">Kozmo</h3>
+            <div class="flex items-center gap-2">
+                <a href="#" class="py-2 px-5 bg-transparent font-regular text-sm lg:text-lg text-black border border-black rounded-full
+                                       hover:bg-black hover:text-white dark:text-blue-500 dark:bg-gray-800 dark:border-gray-800 dark:hover:bg-white dark:hover:text-black transition duration-200">
+                    UI.UX
+                </a>
+                <a href="#" class="py-2 px-5 bg-transparent font-regular text-sm lg:text-lg text-black border border-black rounded-full
+                                       hover:bg-black hover:text-white dark:text-blue-500 dark:bg-gray-800 dark:border-gray-800 dark:hover:bg-white dark:hover:text-black transition duration-200">
+                    BRANDING
+                </a>
+            </div>
+        </div>
+        <div class="gs_reveal_fromRight gs_reveal bg-[#F2F4F7] rounded-[15px] lg:rounded-[35px] px-3 py-7 lg:px-7 lg:py-11">
+            <div class="bg-gray-500 rounded-[15px] aspect-[4/3] animate-pulse"></div>
+            <h3 class="text-black font-bold text-lg lg:text-2xl my-6">Kozmo</h3>
+            <div class="flex items-center gap-2">
+                <a href="#" class="py-2 px-5 bg-transparent font-regular text-sm lg:text-lg text-black border border-black rounded-full
+                                       hover:bg-black hover:text-white dark:text-blue-500 dark:bg-gray-800 dark:border-gray-800 dark:hover:bg-white dark:hover:text-black transition duration-200">
+                    UI.UX
+                </a>
+                <a href="#" class="py-2 px-5 bg-transparent font-regular text-sm lg:text-lg text-black border border-black rounded-full
+                                       hover:bg-black hover:text-white dark:text-blue-500 dark:bg-gray-800 dark:border-gray-800 dark:hover:bg-white dark:hover:text-black transition duration-200">
+                    BRANDING
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Journal -->
+<section class="gs_reveal container my-10 lg:my-32">
+    <h2 class="flex gap-3.5 mb-10">
+        <svg width="35" height="30" viewBox="0 0 35 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M32.7727 23.4571H6.98677C3.13007 23.4571 0 20.327 0 16.4703V1.39735C0 0.633467 0.633467 0 1.39735 0C2.16124 0 2.79471 0.633467 2.79471 1.39735V16.4703C2.79471 18.7806 4.67648 20.6624 6.98677 20.6624H32.7727C33.5366 20.6624 34.17 21.2958 34.17 22.0597C34.17 22.8236 33.5366 23.4571 32.7727 23.4571Z" fill="#5E5E5E"/>
+            <path d="M26.8854 29.3445C26.5314 29.3445 26.1774 29.2141 25.8979 28.9346C25.3576 28.3943 25.3576 27.4999 25.8979 26.9596L30.7979 22.0596L25.8979 17.1596C25.3576 16.6193 25.3576 15.725 25.8979 15.1847C26.4382 14.6443 27.3325 14.6443 27.8728 15.1847L33.7604 21.0721C34.0212 21.333 34.1703 21.687 34.1703 22.0596C34.1703 22.4323 34.0212 22.7862 33.7604 23.047L27.8728 28.9346C27.612 29.2141 27.258 29.3445 26.8854 29.3445Z" fill="#5E5E5E"/>
+        </svg>
+        <span class="text-[#5E5E5E] text-lg lg:text-xl font-medium tracking-[0.25rem] !leading-[180%] dark:text-[#4B5563]">
+            JOURNAL
+        </span>
+    </h2>
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-5">
+        <div class="flex flex-col gap-2">
+            <div class="bg-gray-500 aspect-square rounded-[15px] lg:rounded-[35px] overflow-hidden">
+                <img src="./public/images/04.jpg" alt="" class="w-full h-full object-cover">
+            </div>
+            <span class="font-light text-xs lg:text-lg text-[#51555B] dark:text-gray-400">
+                Jan8 , 2023
+            </span>
+            <h3 class="text-black font-bold text-lg lg:text-4xl dark:text-gray-300">
+                <a href="#">
+                    10 inspiring graphic design trends for 2024
+                </a>
+            </h3>
+        </div>
+        <div class="flex flex-col gap-2">
+            <div class="bg-gray-500 aspect-square rounded-[15px] lg:rounded-[35px] overflow-hidden">
+                <img src="./public/images/04.jpg" alt="" class="w-full h-full object-cover">
+            </div>
+            <span class="font-light text-xs lg:text-lg text-[#51555B] dark:text-gray-400">
+                Jan8 , 2023
+            </span>
+            <h3 class="text-black font-bold text-lg lg:text-4xl dark:text-gray-300">
+                <a href="#">
+                    10 inspiring graphic design trends for 2024
+                </a>
+            </h3>
+        </div>
+        <div class="flex flex-col gap-2">
+            <div class="bg-gray-500 aspect-square rounded-[15px] lg:rounded-[35px] overflow-hidden">
+                <img src="./public/images/04.jpg" alt="" class="w-full h-full object-cover">
+            </div>
+            <span class="font-light text-xs lg:text-lg text-[#51555B] dark:text-gray-400">
+                Jan8 , 2023
+            </span>
+            <h3 class="text-black font-bold text-lg lg:text-4xl dark:text-gray-300">
+                <a href="#">
+                    10 inspiring graphic design trends for 2024
+                </a>
+            </h3>
+        </div>
+    </div>
+</section>
+<!-- footer -->
+<footer class="container mb-7">
+    <section class="bg-[#1E2022] rounded-[25px] lg:rounded-[50px] dark:bg-gray-800">
+        <div class="flex flex-col items-center justify-center gap-16 w-3/5 mx-auto py-28">
+            <h4 class="text-white dark:text-white font-bold text-[2.5rem] lg:text-[4.5rem] text-center">
+                Let’s create your
+                next big idea.
+            </h4>
+            <a href="#" class="rounded-full py-2.5 px-5 bg-white text-lg lg:text-xl font-medium">
+                Schedule a call
+            </a>
+            <ul class="flex flex-col items-center justify-center gap-10 lg:flex-row">
+                <li>
+                    <a href="#" class="text-white text-base lg:text-lg font-medium hover:text-amber-500">
+                        HOME
+                    </a>
+                </li>
+                <li>
+                    <a href="#" class="text-white text-base lg:text-lg font-medium hover:text-amber-500">
+                        CASE STUDIES
+                    </a>
+                </li>
+                <li>
+                    <a href="#" class="text-white text-base lg:text-lg font-medium hover:text-amber-500">
+                        ABOUT
+                    </a>
+                </li>
+                <li>
+                    <a href="#" class="text-white text-base lg:text-lg font-medium hover:text-amber-500">
+                        CONTACT
+                    </a>
+                </li>
+                <li>
+                    <a href="#" class="text-white text-base lg:text-lg font-medium hover:text-amber-500">
+                        BLOG
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </section>
+</footer>
 
 <script defer type="module" src="./main.js"></script>
 </body>
